@@ -1,0 +1,11 @@
+<svg version="1.0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+	.st0{fill:none;stroke:#d61842;}
+	.st1{fill:#d61842;}
+</style>
+<g>
+	<path class="st0" d="M26.4,29H14.5v7.6h11.9V29z"/>
+	<path class="st0" d="M25.6,14.4H15.5v14.4h10.1V14.4z"/>
+	<path class="st1" d="M17,3v11h7v-5L17.3,3H17z M16,2h1.7L25,8.5V15h-9V2z"/>
+</g>
+</svg>

@@ -1,0 +1,15 @@
+<svg version="1.0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+	.st0{fill:none;stroke:#d61842;}
+</style>
+<g>
+	<path class="st0" d="M18.5,16.5h-7v18h7V16.5z"/>
+	<path class="st0" d="M11.5,16.5v-12h7v12H11.5z"/>
+	<path class="st0" d="M28.5,22.5h-6v12h6V22.5z"/>
+	<path class="st0" d="M23.5,6.5h4H23.5z"/>
+	<path class="st0" d="M22,10.5h7H22z"/>
+	<path class="st0" d="M22,8.5h7H22z"/>
+	<path class="st0" d="M23.5,12.5h4H23.5z"/>
+	<path class="st0" d="M25.5,6.5v16V6.5z"/>
+</g>
+</svg>
