@@ -40,83 +40,72 @@ function catchChange(arr, target) {
     target.checked = false;
   }
 }
-/********try on swipers*********/
-// categories slider
-let categoriesSlider = new Swiper(".categories-slider", {
-  spaceBetween: 0,
-  grabCursor: true,
-  slidesPerView: 5
-});
-// brands slider
-let brandsSlider = new Swiper(".brands-slider", {
-  spaceBetween: 0,
-  grabCursor: true,
-  slidesPerView: 4
-});
-// colors slider
-let colorsSlider = new Swiper(".colors-slider", {
-  spaceBetween: 0,
-  grabCursor: true,
-  slidesPerView: 4
-});
-/*************levels update**************** */
-let categoriesSlides = document.querySelectorAll(
-  ".categories-slider .swiper-slide"
-);
-let brandsSlides = document.querySelectorAll(".brands-slider .swiper-slide");
-let swipersWrapper = document.querySelector(".main-swipers-wrap");
-let selectedItem = document.querySelector(".selected_item");
-let expandBtn = document.querySelector(".expand");
-// from level 1 to level 2 function
-categoriesSlides.forEach(slide => {
-  slide.addEventListener("click", e => {
-    swipersWrapper.classList.add("brands-show");
-    selectedItem.classList.add("show");
-    // *************** //
-    let clickedItem = e.target.closest(".swiper-slide");
-    let clickedItemImageSrc, clickedItemName;
-    if (clickedItem) {
-      clickedItemImageSrc = clickedItem.querySelector(".icon img").src;
-      clickedItemName = clickedItem.querySelector("h6").innerHTML;
+// filters chart
+var options = {
+  series: [44, 55, 41, 17, 15],
+  labels: ["كحل", "ملمع شفاة", "ماسكرا", "روچ", "احمر خدود"],
+  chart: {
+    type: "donut"
+  },
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200
+        },
+        legend: {
+          position: "bottom"
+        }
+      }
     }
-    selectedItem.querySelector(".icon img").src = clickedItemImageSrc;
-    selectedItem.querySelector("h6").innerHTML = clickedItemName;
-  });
-});
-//from level 2 to level 3 function
-brandsSlides.forEach(slide => {
-  slide.addEventListener("click", e => {
-    swipersWrapper.classList.add("colors-show");
-    let clickedItem = e.target.closest(".swiper-slide");
-    let clickedItemImageSrc, clickedItemName;
-    if (clickedItem) {
-      clickedItemImageSrc = clickedItem.querySelector(".icon img").src;
-      clickedItemName = clickedItem.querySelector("h6").innerHTML;
+  ]
+};
+var chart = new ApexCharts(document.querySelector("#filtersChart"), options);
+chart.render();
+// most used brands
+var options = {
+  series: [
+    {
+      name: "SEPHORA",
+      data: [35, 40, 20, 50, 10, 30, 40]
+    },
+    {
+      name: "Rare Beauty",
+      data: [15, 35, 25, 10, 40, 45, 5]
+    },
+    {
+      name: "Hourglass",
+      data: [60, 35, 20, 65, 15, 45, 50]
+    },
+    {
+      name: "Fenty Beauty",
+      data: [45, 25, 10, 45, 23, 14, 55]
     }
-    selectedItem.querySelector(".icon img").src = clickedItemImageSrc;
-    selectedItem.querySelector("h6").innerHTML = clickedItemName;
-  });
-});
-// expanding button
-expandBtn.addEventListener("click", () => {
-  if (
-    swipersWrapper.classList.contains("brands-show") &&
-    swipersWrapper.classList.contains("colors-show")
-  ) {
-    swipersWrapper.classList.remove("colors-show");
-  } else {
-    swipersWrapper.classList.remove("brands-show");
-    selectedItem.classList.remove("show");
+  ],
+  chart: {
+    type: "bar",
+    height: 400,
+    stacked: true
+  },
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        legend: {
+          position: "bottom",
+          offsetX: -10,
+          offsetY: 0
+        }
+      }
+    }
+  ],
+  xaxis: {
+    categories: ["sa", "su", "mo", "tu", "we", "th", "fr"]
+  },
+  fill: {
+    opacity: 1
   }
-});
-// text trim
-$(document).ready(function() {
-  $(".brands-slider h6").each(function() {
-    var text = $(this).text();
-    if (text.length > 12) {
-      var truncatedText =
-        $.trim(text).substring(0, 12).split(" ").slice(0, -1).join(" ") + "...";
-      $(this).text(truncatedText);
-    }
-  });
-});
+};
+var chart = new ApexCharts(document.querySelector("#mostusedbrands"), options);
+chart.render();
