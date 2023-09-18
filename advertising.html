@@ -72,15 +72,7 @@
 <script src="assets/js/apexcharts.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
-    FilePond.registerPlugin(
-        FilePondPluginFileEncode,
-        FilePondPluginFileValidateSize,
-        FilePondPluginImageExifOrientation,
-        FilePondPluginImagePreview
-    );
-    FilePond.create(
-        document.querySelector('input')
-    );
+    FilePond.parse(document.body);
 </script>
 
 </html>

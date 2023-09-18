@@ -87,7 +87,7 @@ var mostUsedBrandsOptions = {
       data: [45, 25, 10, 45, 23, 14, 55]
     }
   ],
-  colors: ["#c7f9ee", "#6dfdd2", "#1de4bd", "#1bd4d4", "#1ac9e6"],
+  colors: ["#1bd4d4", "#1ac9e6", "#19aade", "#176ba0", "#142459"],
   chart: {
     type: "bar",
     height: 400,

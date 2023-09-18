@@ -13,7 +13,7 @@
   font-family: 'montserrat', sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
-.apexcharts-legend-text{
+.apexcharts-legend-text {
   font-family: 'montserrat', sans-serif !important;
 }
 body {
@@ -1477,7 +1477,7 @@ main {
     color: #fff;
     font-size: 24px;
   }
-  span{
+  span {
     position: absolute;
     background: #fff;
     color: #d61842;
@@ -1492,4 +1492,28 @@ main {
     top: 10px;
     left: 10px;
   }
+}
+.filepond--credits {
+  display: none !important;
+}
+.filepond--drop-label {
+  color: #4c4e53;
+}
+
+.filepond--label-action {
+  text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+  border-radius: 2em;
+  background-color: #edf0f4;
+  height: 1em;
+}
+
+.filepond--item-panel {
+  background-color: #595e68;
+}
+
+.filepond--drip-blob {
+  background-color: #7f8a9a;
 }
