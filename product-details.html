@@ -1,0 +1,264 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirolaai</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/apex-charts.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="left-side">
+                    <ul>
+                        <li>
+                            <div class="vendor">
+                                <div class="img">
+                                    <img src="assets/images/vendor.svg" alt="vendor-logo">
+                                    <a href="auth-login.html"><i class="fa-sharp fa-regular fa-power-off"></i></a>
+                                </div>
+                                <div class="vendor-name">
+                                    <h6>beautifo store</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a class="active" href="index.html">المتجر</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="advertising.html">الاعلانات</a></li>
+                        <li><a href="statics.html">الاحصائيات</a></li>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <h1><a href="index.html">Mirolaai</a></h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="details">
+        <div id="main-wrapper" class="container p-1">
+            <div class="row mb-4">
+                <div class="col-lg-6 col-12">
+                    <div class="product-image-wrapper">
+                        <img src="assets/images/libgloss.jpg" alt="">
+                        <div class="layer">
+                            <a href="try-on.html">TRY ON</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="product-description">
+                        <a href="#1">Rare Beauty by Selena Gomez</a>
+                        <h4>Soft Pinch Liquid Blush</h4>
+                        <div class="price">
+                            <p class="new">$23.00</p>
+                            <p class="old">$35.00</p>
+                            <span>(5% off)</span>
+                        </div>
+                        <p class="color-name">Color: <span>Joy - dewy muted peach</span></p>
+                        <p class="size">Size 0.25 oz/ 7.5 mL</p>
+                        <div class="color-palete">
+                            <h6>Radiant finish - Standard size</h6>
+                            <ul class="colors">
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-1"
+                                        style="background-image: url('assets/images/s1.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-2"
+                                        style="background-image: url('assets/images/s2.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-3"
+                                        style="background-image: url('assets/images/s3.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-4"
+                                        style="background-image: url('assets/images/s4.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-5"
+                                        style="background-image: url('assets/images/s5.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-6"
+                                        style="background-image: url('assets/images/s6.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-7"
+                                        style="background-image: url('assets/images/s7.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-8"
+                                        style="background-image: url('assets/images/s8.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-9"
+                                        style="background-image: url('assets/images/s9.jpg');" class="color-selct cs1"
+                                        onchange="catchChange( document.querySelectorAll('.cs1') , document.getElementById('checkall'))">
+                                </li>
+                                <li class="select-all">
+                                    <input class="check" type="checkbox" id="checkall" name="checkall"
+                                        onchange="selectionFunction(this, document.querySelectorAll('.cs1'))">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="color-palete">
+                            <h6>Matte finish - Standard size</h6>
+                            <ul class="colors">
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-1"
+                                        style="background-image: url('assets/images/s10.jpg');" class="color-selct cs2"
+                                        onchange="catchChange( document.querySelectorAll('.cs2') , document.getElementById('checkall2'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-2"
+                                        style="background-image: url('assets/images/s11.jpg');" class="color-selct cs2"
+                                        onchange="catchChange( document.querySelectorAll('.cs2') , document.getElementById('checkall2'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-3"
+                                        style="background-image: url('assets/images/s12.jpg');" class="color-selct cs2"
+                                        onchange="catchChange( document.querySelectorAll('.cs2') , document.getElementById('checkall2'))">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="color-select" id="color-select-3"
+                                        style="background-image: url('assets/images/s13.jpg');" class="color-selct cs2"
+                                        onchange="catchChange( document.querySelectorAll('.cs2') , document.getElementById('checkall2'))">
+                                </li>
+                                <li class="select-all">
+                                    <input class="check" type="checkbox" id="checkall2" name="checkall"
+                                        onchange="selectionFunction(this, document.querySelectorAll('.cs2'))">
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="add_btn">Add Product</button>
+                    </div>
+                </div>
+            </div>
+            <div class="highlights">
+                <h4>Highlights</h4>
+                <div class="row">
+                    <div class="col-lg-4 col-6 p-3">
+                        <div class="hcard">
+                            <div class="icon">
+                                <img src="assets/images/h1.svg" alt="icon">
+                            </div>
+                            <h6>Radiant Finish</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6 p-3">
+                        <div class="hcard">
+                            <div class="icon">
+                                <img src="assets/images/h2.svg" alt="icon">
+                            </div>
+                            <h6>Liquid Formula</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6 p-3">
+                        <div class="hcard">
+                            <div class="icon">
+                                <img src="assets/images/h3.svg" alt="icon">
+                            </div>
+                            <h6>Community Favorite</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6 p-3">
+                        <div class="hcard">
+                            <div class="icon">
+                                <img src="assets/images/h4.svg" alt="icon">
+                            </div>
+                            <h6>Matte Finish</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6 p-3">
+                        <div class="hcard">
+                            <div class="icon">
+                                <img src="assets/images/h5.svg" alt="icon">
+                            </div>
+                            <h6>Long-wearing</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6 p-3">
+                        <div class="hcard">
+                            <div class="icon">
+                                <img src="assets/images/h6.svg" alt="icon">
+                            </div>
+                            <h6>Medium Coverage</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="highlights">
+                <h4>About product</h4>
+                <div class="about">
+                    <p>
+                        <span>What it is:</span>
+                        A weightless, long-lasting liquid blush that blends and builds beautifully for a soft,
+                        healthy flush. Available in matte and dewy finishes.
+                    </p>
+                    <p>
+                        <span>Ingredient Callouts:</span>
+                        Free of sulfates SLS and SLES, parabens, formaldehydes, formaldehyde-releasing agents,
+                        phthalates, mineral oil, retinyl palmitate, oxybenzone, coal tar, hydroquinone, triclosan, and
+                        triclocarban, and contains less than one percent of synthetic fragrances. This product is also
+                        vegan and cruelty-free.
+                    </p>
+                    <p>
+                        <span>What Else You Need to Know:</span>
+                        Create a pinch-perfect flush using this featherweight formula infused with long-lasting pigments
+                        that last all day. Available in matte or dewy finishes, this liquid blush blends beautifully to
+                        create soft, buildable color with a natural, second-skin finish.
+                    </p>
+                    <p>
+                        This product is an Allure Best of Beauty award winner.
+                    </p>
+                    <p>
+                        <span>Real results:</span><br>
+                        100% said it applies easily and wears evenly <br>
+                        100% said the texture is silky and glides on smoothly <br>
+                        100% said it stays in place upon application and is comfortable to wear <br>
+                        97% said the color blends seamlessly <br>
+                        *In an independent consumer study of 32 subjects
+                    </p>
+                </div>
+            </div>
+            <div class="highlights">
+                <h4>How to Use</h4>
+                <div class="about">
+                    <p>
+                        <span>Suggested Usage:</span> <br>
+                        -Gently remove excess product from applicator. <br>
+                        -Use the doe-foot applicator and place one or two dots on each cheek. <br>
+                        -Use fingertips and gently pat into skin for a seamless finish.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/apexcharts.js"></script>
+<script src="assets/js/app.js"></script>
+
+</html>

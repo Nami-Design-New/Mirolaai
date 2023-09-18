@@ -41,12 +41,13 @@ function catchChange(arr, target) {
   }
 }
 // filters chart
-var options = {
+var filtersChartOptions = {
   series: [44, 55, 41, 17, 15],
   labels: ["كحل", "ملمع شفاة", "ماسكرا", "روچ", "احمر خدود"],
   chart: {
     type: "donut"
   },
+  colors: ["#c7f9ee", "#6dfdd2", "#1de4bd", "#1bd4d4", "#1ac9e6"],
   responsive: [
     {
       breakpoint: 480,
@@ -61,10 +62,13 @@ var options = {
     }
   ]
 };
-var chart = new ApexCharts(document.querySelector("#filtersChart"), options);
+var chart = new ApexCharts(
+  document.querySelector("#filtersChart"),
+  filtersChartOptions
+);
 chart.render();
 // most used brands
-var options = {
+var mostUsedBrandsOptions = {
   series: [
     {
       name: "SEPHORA",
@@ -83,6 +87,7 @@ var options = {
       data: [45, 25, 10, 45, 23, 14, 55]
     }
   ],
+  colors: ["#c7f9ee", "#6dfdd2", "#1de4bd", "#1bd4d4", "#1ac9e6"],
   chart: {
     type: "bar",
     height: 400,
@@ -107,5 +112,8 @@ var options = {
     opacity: 1
   }
 };
-var chart = new ApexCharts(document.querySelector("#mostusedbrands"), options);
+var chart = new ApexCharts(
+  document.querySelector("#mostusedbrands"),
+  mostUsedBrandsOptions
+);
 chart.render();

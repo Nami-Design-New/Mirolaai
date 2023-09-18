@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- dropify -->
-    <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
+    <!-- filebond -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,10 +23,10 @@
                             <div class="vendor">
                                 <div class="img">
                                     <img src="assets/images/vendor.svg" alt="vendor-logo">
+                                    <a href="auth-login.html"><i class="fa-sharp fa-regular fa-power-off"></i></a>
                                 </div>
                                 <div class="vendor-name">
                                     <h6>beautifo store</h6>
-                                    <p>Admin</p>
                                 </div>
                             </div>
                         </li>
@@ -52,7 +52,13 @@
             <div class="uploader-lap">
                 <div class="row">
                     <div class="col-12">
-                        <input name="file1" type="file" class="dropify" data-height="250px" />
+                        <input id="dropify" type="file" class="filepond" name="filepond" multiple
+                            data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3">
+                    </div>
+                    <div class="col-12 d-flex align-items-center justify-content-center p-4">
+                        <button class="add_btn advertising">
+                            اضافة
+                        </button>
                     </div>
                 </div>
             </div>
@@ -61,24 +67,20 @@
     <footer>
     </footer>
 </body>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/apexcharts.js"></script>
 <script src="assets/js/app.js"></script>
-<script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
 <script>
-    $('.dropify').dropify();
-    showHideBtns = document.querySelectorAll(".password-show");
-    passInputs = document.querySelectorAll(".pass");
-    for (let i = 0; i < showHideBtns.length; i++) {
-        showHideBtns[i].addEventListener("click", () => {
-            if (passInputs[i].type === "password") {
-                passInputs[i].setAttribute('type', 'text');
-                showHideBtns[i].querySelector("i").classList = "fa-regular fa-eye";
-            } else {
-                passInputs[i].setAttribute('type', 'password');
-                showHideBtns[i].querySelector("i").classList = "fa-sharp fa-regular fa-eye-slash";
-            }
-        })
-    }
+    FilePond.registerPlugin(
+        FilePondPluginFileEncode,
+        FilePondPluginFileValidateSize,
+        FilePondPluginImageExifOrientation,
+        FilePondPluginImagePreview
+    );
+    FilePond.create(
+        document.querySelector('input')
+    );
 </script>
 
 </html>
