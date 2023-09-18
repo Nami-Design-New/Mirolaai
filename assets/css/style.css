@@ -693,7 +693,7 @@ main .product-image-wrapper:hover .layer {
   transform: scaleY(1);
 }
 main .product-description {
-  padding: 0 24px;
+  padding: 0 12px;
   direction: ltr !important;
 }
 main .product-description h4,
