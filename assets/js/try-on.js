@@ -111,3 +111,88 @@ $(document).ready(function() {
     }
   });
 });
+/*advertisments show hide if user not active for 10s*/
+let isblock = false;
+const delayTime = 10000;
+function showAdvertisements() {
+  const advertisementsWrap = document.querySelector(".advertisments_wrap");
+  if (advertisementsWrap) {
+    advertisementsWrap.style.display = "block";
+    isblock = true;
+  }
+  if (isblock === true) {
+    // advertisments slider
+    const mainSlider = new Swiper(".mainSliderContainer", {
+      spaceBetween: 0,
+      effect: "fade",
+      loop: true,
+      centeredSlides: true,
+      speed: 1000,
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".mainSliderPagination",
+        clickable: true
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+      on: {
+        init: function() {
+          setAutoplayDelay(this);
+        },
+        slideChange: function() {
+          pauseAllVideos();
+          const activeSlide = this.slides[this.activeIndex];
+          const activeVideo = activeSlide.querySelector(
+            ".mainSliderContainer video"
+          );
+          if (activeVideo) {
+            activeVideo.play();
+            setAutoplayDelay(this);
+          }
+        }
+      }
+    });
+    // advertisement swiper
+    function calculateAutoplayDelay(video, minimumDelay) {
+      if (video) {
+        const videoDuration = video.duration * 1000;
+        return Math.max(videoDuration, minimumDelay);
+      }
+      return minimumDelay;
+    }
+    function setAutoplayDelay(slider) {
+      const activeSlide = slider.slides[slider.activeIndex];
+      const activeVideo = activeSlide.querySelector(
+        ".mainSliderContainer video"
+      );
+      const autoplayDelay = calculateAutoplayDelay(activeVideo, 8000);
+      slider.params.autoplay.delay = autoplayDelay;
+      slider.autoplay.start();
+      console.log("Swiper Autoplay Delay:", autoplayDelay);
+    }
+    // Function to pause all videos
+    function pauseAllVideos() {
+      const allVideos = document.querySelectorAll(".mainSliderContainer video");
+      allVideos.forEach(function(video) {
+        video.pause();
+      });
+    }
+  }
+}
+let timer;
+function startTimer() {
+  clearTimeout(timer);
+  timer = setTimeout(showAdvertisements, delayTime);
+}
+document.addEventListener("mousemove", startTimer);
+startTimer();
+let close_wrap = document.querySelector(".close_wrap");
+close_wrap.addEventListener("click", () => {
+  document.querySelector(".advertisments_wrap").style.display = "none";
+  isblock = false;
+});
