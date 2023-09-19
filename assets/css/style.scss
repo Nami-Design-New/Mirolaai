@@ -383,7 +383,7 @@ main {
             display: flex;
             overflow-x: scroll;
             gap: 16px;
-            &::-webkit-scrollbar{
+            &::-webkit-scrollbar {
               display: none;
             }
             li {
@@ -417,7 +417,7 @@ main {
             }
             &.products_brands {
               li {
-                span{
+                span {
                   white-space: nowrap;
                 }
                 border: 1px solid #c5c5c5;
@@ -1662,6 +1662,9 @@ main {
   &.advertising {
     width: 30%;
     margin-top: 1rem;
+    @media (max-width: 576px) {
+      width: 70%;
+    }
   }
 }
 .bg-gray {

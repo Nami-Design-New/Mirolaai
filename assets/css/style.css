@@ -1666,6 +1666,11 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   width: 30%;
   margin-top: 1rem;
 }
+@media (max-width: 576px) {
+  .add_btn.advertising {
+    width: 70%;
+  }
+}
 
 .bg-gray {
   border-radius: 8px;
