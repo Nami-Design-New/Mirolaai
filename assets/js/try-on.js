@@ -190,6 +190,7 @@ function startTimer() {
   timer = setTimeout(showAdvertisements, delayTime);
 }
 document.addEventListener("mousemove", startTimer);
+document.addEventListener("touchstart", startTimer);
 startTimer();
 let close_wrap = document.querySelector(".close_wrap");
 close_wrap.addEventListener("click", () => {

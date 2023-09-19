@@ -338,10 +338,16 @@ main .wrapper .selection_frame .nav {
   border-radius: 12px;
   padding: 12px;
   background: #fafafa;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+main .wrapper .selection_frame .nav::-webkit-scrollbar {
+  display: none;
 }
 main .wrapper .selection_frame .nav .nav-link {
   font-size: 14px;
   color: #000;
+  white-space: nowrap;
 }
 main .wrapper .selection_frame .nav .nav-link .check {
   visibility: hidden;
@@ -388,10 +394,14 @@ main .wrapper .selection_frame .tab-content .brands h3 {
 }
 main .wrapper .selection_frame .tab-content .brands ul {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: scroll;
   gap: 16px;
 }
+main .wrapper .selection_frame .tab-content .brands ul::-webkit-scrollbar {
+  display: none;
+}
 main .wrapper .selection_frame .tab-content .brands ul li label {
+  white-space: nowrap;
   cursor: pointer;
   position: relative;
   display: block;
@@ -429,6 +439,9 @@ main .wrapper .selection_frame .tab-content .brands ul.products_brands li {
   padding: 4px 16px;
   color: #000;
   font-size: 14px;
+}
+main .wrapper .selection_frame .tab-content .brands ul.products_brands li span {
+  white-space: nowrap;
 }
 main .wrapper .selection_frame .tab-content .brands ul.products_brands li i {
   font-size: 18px;
@@ -1038,7 +1051,7 @@ main .advertisments_wrap {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   z-index: 99;
   display: none;
 }
@@ -1656,7 +1669,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 
 .bg-gray {
   border-radius: 8px;
-  padding: 32px !important;
+  padding: 8px !important;
 }
 
 .m-tb-60 {
@@ -1701,11 +1714,8 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 }
 
 .try-on-main {
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
-}
-.try-on-main .bg-gray {
-  height: calc(100vh - 48px);
 }
 
 .add-products-cart {

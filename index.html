@@ -606,6 +606,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- foundation -->
                                             <div class="tab-pane fade" id="foundation" role="tabpanel"
                                                 aria-labelledby="foundation-tab">
                                                 <div class="brands">
@@ -1082,6 +1083,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- eyelashes tab -->
                                             <div class="tab-pane fade" id="eyelashes" role="tabpanel"
                                                 aria-labelledby="eyelashes-tab">
                                                 <div class="brands">
@@ -1558,6 +1560,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- eyliner tab -->
                                             <div class="tab-pane fade" id="eyeliner" role="tabpanel"
                                                 aria-labelledby="eyeliner-tab">
                                                 <div class="brands">
@@ -2414,6 +2417,22 @@
 </body>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/apexcharts.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script>
+    //filter isotop
+    $(document).ready(function () {
+        var $projects = $(".filter-wapper").isotope({
+            itemSelector: ".project-item",
+            layoutMode: "fitRows"
+        });
+        $(".filter-btns").on("click", ".filter-btn", function () {
+            $(".filter-btn").removeClass("active");
+            $(this).addClass("active");
+            var filterValue = $(this).attr("data-filter");
+            $projects.isotope({ filter: filterValue });
+        });
+    });
+</script>
 
 </html>
