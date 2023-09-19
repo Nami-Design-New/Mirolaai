@@ -75,7 +75,7 @@ header nav {
 header nav .container {
   background: #fafafa;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,20 +155,20 @@ header nav .container .nav-links ul .hidden {
   header nav .container .nav-links.show {
     height: 250px;
   }
-}
-header nav .container .nav-links .hidden {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  background: #d61842;
-}
-header nav .container .nav-links .hidden a {
-  color: #fff;
-  font-size: 14px;
-}
-header nav .container .nav-links .hidden a i {
-  transform: rotate(-90deg);
+  header nav .container .nav-links .hidden {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: #d61842;
+  }
+  header nav .container .nav-links .hidden a {
+    color: #fff;
+    font-size: 14px;
+  }
+  header nav .container .nav-links .hidden a i {
+    transform: rotate(-90deg);
+  }
 }
 header nav .container .left-side {
   height: 100%;
@@ -211,19 +211,13 @@ header nav .container .left-side ul li .vendor .img a {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #d61842;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
 }
 header nav .container .left-side ul li .vendor .img a i {
-  color: #d61842;
-}
-header nav .container .left-side ul li .vendor .img a:hover {
-  background-color: #d61842;
-}
-header nav .container .left-side ul li .vendor .img a:hover i {
   color: #fff;
 }
 header nav .container .left-side ul li .vendor .vendor-name {
@@ -298,7 +292,6 @@ main {
   padding: 0 12px;
 }
 main .main-sidebar {
-  padding: 16px 0;
   transition: all 0.5s ease-in-out;
 }
 main .main-sidebar ul {
@@ -311,9 +304,10 @@ main .main-sidebar ul li {
   align-items: center;
   justify-content: center;
   background: #fafafa;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 main .main-sidebar ul li button {
+  border-radius: 12px !important;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -334,19 +328,42 @@ main .main-sidebar ul li button.active {
   color: #fff;
 }
 main .main-sidebar ul li button.active img {
-  filter: invert(1);
+  filter: brightness(0) invert(1);
 }
 main .wrapper {
-  padding: 16px 0;
+  padding: 20px 0;
   width: 100%;
 }
+main .wrapper .selection_frame .nav {
+  border-radius: 12px;
+  padding: 12px;
+  background: #fafafa;
+}
 main .wrapper .selection_frame .nav .nav-link {
+  font-size: 14px;
   color: #000;
 }
+main .wrapper .selection_frame .nav .nav-link .check {
+  visibility: hidden;
+}
 main .wrapper .selection_frame .nav .nav-link.active {
-  border-color: #d61842;
-  color: #d61842;
+  background: #d61842;
+  border-radius: 6px !important;
+  color: #fff;
   border-bottom-color: transparent;
+}
+main .wrapper .selection_frame .nav .nav-link.active .check {
+  visibility: visible;
+}
+main .wrapper .selection_frame .nav .nav-link.active .check::after {
+  border-color: #fff;
+}
+main .wrapper .selection_frame .nav .nav-link.active .check:checked::after {
+  background: #fff;
+  color: #d61842;
+}
+main .wrapper .selection_frame .nav .nav-link.active img {
+  filter: brightness(0) invert(1);
 }
 main .wrapper .selection_frame .nav .nav-link img {
   height: 28px;
@@ -1168,7 +1185,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 }
 @media (max-width: 576px) {
   .product_frame .pro-img .layer {
-    padding: 32px;
+    padding: 26px;
   }
   .product_frame .pro-img .layer a {
     font-size: 16px;

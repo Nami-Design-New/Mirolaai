@@ -63,7 +63,7 @@ header {
     .container {
       background: #fafafa;
       height: 100%;
-      border-radius: 8px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -142,18 +142,18 @@ header {
           &.show {
             height: 250px;
           }
-        }
-        .hidden {
-          display: flex !important;
-          align-items: center;
-          justify-content: center;
-          height: 50px;
-          background: #d61842;
-          a {
-            color: #fff;
-            font-size: 14px;
-            i {
-              transform: rotate(-90deg);
+          .hidden {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            background: #d61842;
+            a {
+              color: #fff;
+              font-size: 14px;
+              i {
+                transform: rotate(-90deg);
+              }
             }
           }
         }
@@ -194,19 +194,13 @@ header {
                   width: 28px;
                   height: 28px;
                   border-radius: 50%;
-                  background-color: #fff;
+                  background-color: #d61842;
                   display: flex;
                   align-items: center;
                   justify-content: center;
                   transition: all .4s ease-in-out;
                   i {
-                    color: #d61842;
-                  }
-                  &:hover {
-                    background-color: #d61842;
-                    i {
-                      color: #fff;
-                    }
+                    color: #fff;
                   }
                 }
               }
@@ -287,7 +281,6 @@ header {
 main {
   padding: 0 12px;
   .main-sidebar {
-    padding: 16px 0;
     transition: all .5s ease-in-out;
     ul {
       gap: 2%;
@@ -298,8 +291,9 @@ main {
         align-items: center;
         justify-content: center;
         background: #fafafa;
-        border-radius: 8px;
+        border-radius: 12px;
         button {
+          border-radius: 12px !important;
           padding: 16px;
           display: flex;
           align-items: center;
@@ -318,7 +312,7 @@ main {
             background: #d61842 !important;
             color: #fff;
             img {
-              filter: invert(1);
+              filter: brightness(0) invert(1);
             }
           }
         }
@@ -326,16 +320,37 @@ main {
     }
   }
   .wrapper {
-    padding: 16px 0;
+    padding: 20px 0;
     width: 100%;
     .selection_frame {
       .nav {
+        border-radius: 12px;
+        padding: 12px;
+        background: #fafafa;
         .nav-link {
+          font-size: 14px;
           color: #000;
+          .check {
+            visibility: hidden;
+          }
           &.active {
-            border-color: #d61842;
-            color: #d61842;
+            background: #d61842;
+            border-radius: 6px !important;
+            color: #fff;
             border-bottom-color: transparent;
+            .check {
+              visibility: visible;
+              &::after {
+                border-color: #fff;
+              }
+              &:checked::after {
+                background: #fff;
+                color: #d61842;
+              }
+            }
+            img {
+              filter: brightness(0) invert(1);
+            }
           }
           img {
             height: 28px;
@@ -1028,7 +1043,7 @@ main {
       align-items: center;
       justify-content: center;
       top: 32px;
-      i{
+      i {
         font-size: 26px;
         color: #fff;
       }
@@ -1156,7 +1171,7 @@ main {
         }
       }
       @media (max-width: 576px) {
-        padding: 32px;
+        padding: 26px;
         a {
           font-size: 16px;
         }
