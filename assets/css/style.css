@@ -1583,6 +1583,10 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   padding: 4px 26px;
 }
 
+.filepond--credits {
+  display: none !important;
+}
+
 /*********** Globals ***********/
 .check {
   width: 16px;
