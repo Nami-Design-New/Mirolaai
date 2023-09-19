@@ -52,9 +52,6 @@ var filtersChartOptions = {
     {
       breakpoint: 480,
       options: {
-        chart: {
-          width: 200
-        },
         legend: {
           position: "bottom"
         }
@@ -117,3 +114,14 @@ var chart = new ApexCharts(
   mostUsedBrandsOptions
 );
 chart.render();
+//toogler menu
+let toggler = document.querySelector(".toogler");
+let menu = document.querySelector(".nav-links");
+toggler.addEventListener("click", () => {
+  menu.classList.toggle("show");
+  if (menu.classList.contains("show")) {
+    toggler.classList.add("close");
+  } else {
+    toggler.classList.remove("close");
+  }
+});

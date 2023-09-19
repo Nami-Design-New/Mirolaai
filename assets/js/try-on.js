@@ -3,19 +3,52 @@
 let categoriesSlider = new Swiper(".categories-slider", {
   spaceBetween: 0,
   grabCursor: true,
-  slidesPerView: 5
+  slidesPerView: 5,
+  breakpoints: {
+    992: {
+      slidesPerView: 5
+    },
+    768: {
+      slidesPerView: 4
+    },
+    350: {
+      slidesPerView: 3
+    }
+  }
 });
 // brands slider
 let brandsSlider = new Swiper(".brands-slider", {
   spaceBetween: 0,
   grabCursor: true,
-  slidesPerView: 4
+  slidesPerView: 4,
+  breakpoints: {
+    992: {
+      slidesPerView: 4
+    },
+    768: {
+      slidesPerView: 3
+    },
+    350: {
+      slidesPerView: 2
+    }
+  }
 });
 // colors slider
 let colorsSlider = new Swiper(".colors-slider", {
   spaceBetween: 0,
   grabCursor: true,
-  slidesPerView: 4
+  slidesPerView: 4,
+  breakpoints: {
+    992: {
+      slidesPerView: 4
+    },
+    768: {
+      slidesPerView: 3
+    },
+    350: {
+      slidesPerView: 2
+    }
+  }
 });
 /*************levels update**************** */
 let categoriesSlides = document.querySelectorAll(
