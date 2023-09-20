@@ -334,93 +334,53 @@ main .wrapper {
   padding: 20px 0;
   width: 100%;
 }
-main .wrapper .selection_frame .categories_nav {
+main .wrapper .selection_frame .nav {
   border-radius: 12px;
   padding: 12px;
   background: #fafafa;
   flex-wrap: nowrap;
   overflow-x: scroll;
 }
-main .wrapper .selection_frame .categories_nav::-webkit-scrollbar {
+main .wrapper .selection_frame .nav::-webkit-scrollbar {
   display: none;
 }
-main .wrapper .selection_frame .categories_nav .nav-link {
+main .wrapper .selection_frame .nav .nav-link {
   font-size: 14px;
   color: #000;
   white-space: nowrap;
 }
-main .wrapper .selection_frame .categories_nav .nav-link .check {
+main .wrapper .selection_frame .nav .nav-link .check {
   visibility: hidden;
 }
-main .wrapper .selection_frame .categories_nav .nav-link.active {
+main .wrapper .selection_frame .nav .nav-link .delete {
+  visibility: hidden;
+}
+main .wrapper .selection_frame .nav .nav-link.active {
   background: #8d8d8d;
   border-radius: 6px !important;
   color: #fff;
   border-bottom-color: transparent;
 }
-main .wrapper .selection_frame .categories_nav .nav-link.active .check {
+main .wrapper .selection_frame .nav .nav-link.active .check {
   visibility: visible;
 }
-main .wrapper .selection_frame .categories_nav .nav-link.active .check::after {
+main .wrapper .selection_frame .nav .nav-link.active .check::after {
   border-color: #fff;
 }
-main .wrapper .selection_frame .categories_nav .nav-link.active .check:checked::after {
+main .wrapper .selection_frame .nav .nav-link.active .check:checked::after {
   background: #fff;
   color: #777;
 }
-main .wrapper .selection_frame .categories_nav .nav-link.active img {
-  filter: brightness(0) invert(1);
-}
-main .wrapper .selection_frame .categories_nav .nav-link img {
-  height: 28px;
-}
-main .wrapper .selection_frame .categories_nav .nav-link .tap-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-main .wrapper .selection_frame .brands_nav {
-  border-radius: 12px;
-  padding: 12px;
-  background: #fafafa;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-}
-main .wrapper .selection_frame .brands_nav::-webkit-scrollbar {
-  display: none;
-}
-main .wrapper .selection_frame .brands_nav .nav-link {
-  font-size: 14px;
-  color: #000;
-  white-space: nowrap;
-}
-main .wrapper .selection_frame .brands_nav .nav-link .check {
-  visibility: hidden;
-}
-main .wrapper .selection_frame .brands_nav .nav-link.active {
-  background: #8d8d8d;
-  border-radius: 6px !important;
-  color: #fff;
-  border-bottom-color: transparent;
-}
-main .wrapper .selection_frame .brands_nav .nav-link.active .check {
+main .wrapper .selection_frame .nav .nav-link.active .delete {
   visibility: visible;
 }
-main .wrapper .selection_frame .brands_nav .nav-link.active .check::after {
-  border-color: #fff;
-}
-main .wrapper .selection_frame .brands_nav .nav-link.active .check:checked::after {
-  background: #fff;
-  color: #777;
-}
-main .wrapper .selection_frame .brands_nav .nav-link.active img {
+main .wrapper .selection_frame .nav .nav-link.active img {
   filter: brightness(0) invert(1);
 }
-main .wrapper .selection_frame .brands_nav .nav-link img {
+main .wrapper .selection_frame .nav .nav-link img {
   height: 32px;
 }
-main .wrapper .selection_frame .brands_nav .nav-link .tap-btn {
+main .wrapper .selection_frame .nav .nav-link .tap-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1093,6 +1053,8 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .product_frame .select-pro {
   position: absolute;
@@ -1184,8 +1146,8 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   direction: ltr;
+  height: 100%;
 }
 .product_frame .pro-description .brand_name {
   color: #d61842;
@@ -1221,6 +1183,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   line-height: 24px;
   margin: 0;
   font-size: 12px;
+  margin-top: auto;
 }
 .product_frame .pro-description .price {
   direction: ltr;
@@ -1676,12 +1639,6 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 }
 .advertising-main .uploader-lap {
   margin: 48px 0;
-}
-
-.dropify-wrapper .dropify-message p {
-  margin: 28px 0 0 !important;
-  font-weight: 400 !important;
-  font-size: 32px !important;
 }
 
 .apexcharts-legend-series {

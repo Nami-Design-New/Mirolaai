@@ -84,7 +84,7 @@
                                 <div class="col-12">
                                     <div class="selection_frame">
                                         <!-- products tabs buttons -->
-                                        <ul class="nav categories_nav nav-pills" id="pills-tab" role="tablist">
+                                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                             <!-- libgloss tab & selector for all its brands -->
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="libGloss-tab" data-bs-toggle="tab"
@@ -95,7 +95,7 @@
                                                         ملمع شفاة
                                                         <input class="check" type="checkbox"
                                                             name="all-libgloss-selector" id="all-libgloss-selector"
-                                                            onchange="selectionFunction(this, document.querySelectorAll('.brands-libgloss'))">
+                                                            onchange="categorySelectionFunction(this, document.querySelectorAll('.brands-libgloss'), document.querySelectorAll('.libgloss_products input'))">
                                                     </div>
                                                 </button>
                                             </li>
@@ -149,7 +149,7 @@
                                                 aria-labelledby="libGloss-tab">
                                                 <div class="brands">
                                                     <!-- brands tabs -->
-                                                    <ul class="nav brands_nav nav-pills" id="pills-tab" role="tablist">
+                                                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                                         <!-- sephora -->
                                                         <li class="nav-item" role="presentation">
                                                             <button class="nav-link active" id="pills-sephora-tab"
@@ -220,20 +220,6 @@
                                                                 </div>
                                                             </button>
                                                         </li>
-                                                        <!--  oriflame -->
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link " id="pills-oriflame-tab"
-                                                                data-bs-toggle="tab" data-bs-target="#pills-oriflame"
-                                                                type="button" role="tab" aria-controls="pills-oriflame"
-                                                                aria-selected="false">
-                                                                <div class="tap-btn">
-                                                                    <img src="assets/images/brand.png" alt="brand">
-                                                                    <input type="checkbox" name="brand-1" id="brand-1"
-                                                                        class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.oriflame-libgloss'))">
-                                                                </div>
-                                                            </button>
-                                                        </li>
                                                         <!--  Lancôme -->
                                                         <li class="nav-item" role="presentation">
                                                             <button class="nav-link " id="pills-Lancôme-tab"
@@ -248,17 +234,18 @@
                                                                 </div>
                                                             </button>
                                                         </li>
-                                                        <!--  vogue -->
+                                                        <!--  beverlyHills -->
                                                         <li class="nav-item" role="presentation">
-                                                            <button class="nav-link " id="pills-vogue-tab"
-                                                                data-bs-toggle="tab" data-bs-target="#pills-vogue"
-                                                                type="button" role="tab" aria-controls="pills-vogue"
+                                                            <button class="nav-link " id="pills-beverlyHills-tab"
+                                                                data-bs-toggle="tab"
+                                                                data-bs-target="#pills-beverlyHills" type="button"
+                                                                role="tab" aria-controls="pills-beverlyHills"
                                                                 aria-selected="false">
                                                                 <div class="tap-btn">
                                                                     <img src="assets/images/brand-2.png" alt="brand">
                                                                     <input type="checkbox" name="brand-3" id="brand-3"
                                                                         class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.vogue-libgloss'))">
+                                                                        onchange="selectionFunction(this, document.querySelectorAll('.beverlyHills-libgloss'))">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -291,17 +278,162 @@
                                                             </button>
                                                         </li>
                                                     </ul>
+                                                    <!-- products tabs content -->
                                                     <div class="tab-content" id="pills-tabContent">
                                                         <div class="container mt-4 p-0">
                                                             <!-- sephora-tab bane -->
                                                             <div class="tab-pane fade show active" id="pills-sephora"
                                                                 role="tabpanel" aria-labelledby="pills-sephora-tab">
-                                                                <div class="row"></div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="sephora-product"
+                                                                                    id="sephora-product"
+                                                                                    class="check sephora-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss12.webp"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">
+                                                                                    SEPHORA
+                                                                                </a>
+                                                                                <p class="product_name">
+                                                                                    Cream Lip Stain Liquid Lipstick
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    74 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $15.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="sephora-product"
+                                                                                    id="sephora-product"
+                                                                                    class="check sephora-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss13.webp"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">
+                                                                                    SEPHORA
+                                                                                </a>
+                                                                                <p class="product_name">
+                                                                                    Lip Last Matte Lipstick
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    20 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $7.50
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <!-- fentybeauty-tab bane -->
                                                             <div class="tab-pane fade" id="pills-fentybeauty"
                                                                 role="tabpanel" aria-labelledby="pills-fentybeauty-tab">
-                                                                <div class="row"></div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="fenty-Beauty-product"
+                                                                                    id="fenty-Beauty-product"
+                                                                                    class="check fenty-Beauty-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss5.jpeg"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">
+                                                                                    Fenty Beauty
+                                                                                </a>
+                                                                                <p class="product_name">
+                                                                                    Gloss Bomb Cream Color Drip Lip
+                                                                                    Cream
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    5 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $22.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="fenty-Beauty-product"
+                                                                                    id="fenty-Beauty-product"
+                                                                                    class="check fenty-Beauty-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss6.jpeg"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">
+                                                                                    Fenty Beauty
+                                                                                </a>
+                                                                                <p class="product_name">
+                                                                                    Stunna Lip Paint Longwear Fluid Lip
+                                                                                    Color
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    5 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $28.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <!-- RareBeauty-tab bane -->
                                                             <div class="tab-pane fade" id="pills-RareBeauty"
@@ -309,7 +441,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="rare-Beauty-product"
                                                                                     id="rare-Beauty-product"
@@ -341,6 +473,40 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="rare-Beauty-product"
+                                                                                    id="rare-Beauty-product"
+                                                                                    class="check rare-Beauty-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss7.jpeg"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">Rare
+                                                                                    Beauty</a>
+                                                                                <p class="product_name">
+                                                                                    With Gratitude Dewy Lip Balm
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    6 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $16.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Glossier-tab bane -->
@@ -349,7 +515,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="glossier-product"
                                                                                     id="glossier-product"
@@ -383,7 +549,7 @@
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="glossier-product"
                                                                                     id="glossier-product"
@@ -423,7 +589,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="hourglass-product"
                                                                                     id="hourglass-product"
@@ -455,12 +621,41 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="hourglass-product"
+                                                                                    id="hourglass-product"
+                                                                                    class="check hourglass-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss8.jpeg"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#"
+                                                                                    class="brand_name">Hourglass</a>
+                                                                                <p class="product_name">
+                                                                                    Mini Vanish™ Airbrush Concealer
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    12 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $18.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <!-- oriflame-tab bane -->
-                                                            <div class="tab-pane fade" id="pills-oriflame"
-                                                                role="tabpanel" aria-labelledby="pills-oriflame-tab">
-                                                                <div class="row"></div>
                                                             </div>
                                                             <!-- Lancôme-tab bane -->
                                                             <div class="tab-pane fade" id="pills-Lancôme"
@@ -468,7 +663,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="Lancôme-product"
                                                                                     id="Lancôme-product"
@@ -499,19 +694,52 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="Lancôme-product"
+                                                                                    id="Lancôme-product"
+                                                                                    class="check Lancôme-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/cream5.jpeg"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#"
+                                                                                    class="brand_name">Lancôme</a>
+                                                                                <p class="product_name">
+                                                                                    Rénergie Lift Multi-Action Ultra
+                                                                                    Dark Circle Correcting Eye Cream
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $82.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- vogue-tab bane -->
-                                                            <div class="tab-pane fade" id="pills-vogue" role="tabpanel"
-                                                                aria-labelledby="pills-vogue-tab">
+                                                            <!-- beverlyHills-tab bane -->
+                                                            <div class="tab-pane fade" id="pills-beverlyHills"
+                                                                role="tabpanel"
+                                                                aria-labelledby="pills-beverlyHills-tab">
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
-                                                                                    name="vogue-product"
-                                                                                    id="vogue-product"
-                                                                                    class="check vogue-libgloss">
+                                                                                    name="beverlyHills-product"
+                                                                                    id="beverlyHills-product"
+                                                                                    class="check beverlyHills-libgloss">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream2.jpeg"
@@ -525,13 +753,45 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="pro-description">
-                                                                                <a href="#" class="brand_name">VOUGE</a>
+                                                                                <a href="#" class="brand_name">Beverly
+                                                                                    Hills</a>
                                                                                 <p class="product_name">
                                                                                     Lash Sculpt Lengthening & Volumizing
                                                                                     Mascara
                                                                                 </p>
                                                                                 <span class="price">
                                                                                     $26.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="beverlyHills-product"
+                                                                                    id="beverlyHills-product"
+                                                                                    class="check beverlyHills-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/cream6.webp"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">Beverly
+                                                                                    Hills</a>
+                                                                                <p class="product_name">
+                                                                                    Perfect Brow Pencil
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $23.00
                                                                                 </span>
                                                                             </div>
                                                                         </div>
@@ -544,7 +804,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="dior-product"
                                                                                     id="dior-product"
@@ -576,6 +836,39 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="dior-product"
+                                                                                    id="dior-product"
+                                                                                    class="check dior-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss11.webp"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">Dior</a>
+                                                                                <p class="product_name">
+                                                                                    Backstage Concealer
+                                                                                </p>
+                                                                                <p class="colors-num">
+                                                                                    22 colors
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $32.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- LillyLashes-tab bane -->
@@ -584,7 +877,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro">
+                                                                            <div class="select-pro libgloss_products">
                                                                                 <input type="checkbox"
                                                                                     name="Lilly-Lashes-product"
                                                                                     id="Lilly-Lashes-product"
@@ -609,6 +902,37 @@
                                                                                 </p>
                                                                                 <span class="price">
                                                                                     $64.00
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                                                        <div class="product_frame">
+                                                                            <div class="select-pro libgloss_products">
+                                                                                <input type="checkbox"
+                                                                                    name="Lilly-Lashes-product"
+                                                                                    id="Lilly-Lashes-product"
+                                                                                    class="check Lilly-Lashes-libgloss">
+                                                                            </div>
+                                                                            <div class="pro-img">
+                                                                                <img src="assets/images/libgloss10.webp"
+                                                                                    alt="women-libgloss">
+                                                                                <div class="layer">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#productModal">
+                                                                                        Quick View <i
+                                                                                            class="fa-regular fa-eye"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pro-description">
+                                                                                <a href="#" class="brand_name">Lilly
+                                                                                    Lashes</a>
+                                                                                <p class="product_name">
+                                                                                    Click Magnetic Liquid Eyeliner
+                                                                                </p>
+                                                                                <span class="price">
+                                                                                    $34.00
                                                                                 </span>
                                                                             </div>
                                                                         </div>
@@ -896,23 +1220,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-12">
-                                <div class="d-flex model-footer">
-                                    <div class="rate">
-                                        <ul class="stars">
-                                            <li><i class="fa-solid fa-star-sharp"></i></li>
-                                            <li><i class="fa-solid fa-star-sharp"></i></li>
-                                            <li><i class="fa-solid fa-star-sharp"></i></li>
-                                            <li><i class="fa-solid fa-star-sharp"></i></li>
-                                            <li><i class="fa-regular fa-star-sharp-half-stroke"></i></li>
-                                        </ul>
-                                        <a href="#!">6.8K reviews</a>
-                                    </div>
-                                    <div class="loves">
-                                        2.1M loves <i class="fa-sharp fa-solid fa-heart"></i>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="col-12 p-4 pt-0">
                                 <button class="add_btn">
                                     Add Product

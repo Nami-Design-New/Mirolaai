@@ -26,6 +26,24 @@ function selectionFunction(input, arr) {
     });
   }
 }
+// level one parent category selection function
+function categorySelectionFunction(input, brandsArr, productsArr) {
+  if (input.checked === false) {
+    brandsArr.forEach(c => {
+      c.checked = false;
+    });
+    productsArr.forEach(c => {
+      c.checked = false;
+    });
+  } else {
+    brandsArr.forEach(c => {
+      c.checked = true;
+    });
+    productsArr.forEach(c => {
+      c.checked = true;
+    });
+  }
+}
 function catchChange(arr, target) {
   let countArr = arr.length;
   let checkedAll = 0;

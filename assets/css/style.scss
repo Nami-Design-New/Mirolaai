@@ -323,7 +323,7 @@ main {
     padding: 20px 0;
     width: 100%;
     .selection_frame {
-      .categories_nav {
+      .nav {
         border-radius: 12px;
         padding: 12px;
         background: #fafafa;
@@ -337,6 +337,9 @@ main {
           color: #000;
           white-space: nowrap;
           .check {
+            visibility: hidden;
+          }
+          .delete{
             visibility: hidden;
           }
           &.active {
@@ -354,51 +357,8 @@ main {
                 color: #777;
               }
             }
-            img {
-              filter: brightness(0) invert(1);
-            }
-          }
-          img {
-            height: 28px;
-          }
-          .tap-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-          }
-        }
-      }
-      .brands_nav {
-        border-radius: 12px;
-        padding: 12px;
-        background: #fafafa;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        .nav-link {
-          font-size: 14px;
-          color: #000;
-          white-space: nowrap;
-          .check {
-            visibility: hidden;
-          }
-          &.active {
-            background: #8d8d8d;
-            border-radius: 6px !important;
-            color: #fff;
-            border-bottom-color: transparent;
-            .check {
+            .delete{
               visibility: visible;
-              &::after {
-                border-color: #fff;
-              }
-              &:checked::after {
-                background: #fff;
-                color: #777;
-              }
             }
             img {
               filter: brightness(0) invert(1);
@@ -1078,6 +1038,8 @@ main {
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
   .select-pro {
     position: absolute;
     top: 24px;
@@ -1169,8 +1131,8 @@ main {
     padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     direction: ltr;
+    height: 100%;
     .brand_name {
       color: #d61842;
       direction: ltr;
@@ -1201,6 +1163,7 @@ main {
       line-height: 24px;
       margin: 0;
       font-size: 12px;
+      margin-top: auto;
     }
     .price {
       direction: ltr;
@@ -1664,11 +1627,6 @@ main {
   .uploader-lap {
     margin: 48px 0;
   }
-}
-.dropify-wrapper .dropify-message p {
-  margin: 28px 0 0 !important;
-  font-weight: 400 !important;
-  font-size: 32px !important;
 }
 .apexcharts-legend-series {
   display: flex;
