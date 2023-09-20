@@ -1701,4 +1701,31 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 .fade:not(.show) {
   opacity: 0;
   display: none;
+}
+
+footer {
+  background: #f4f4f4;
+  width: 100%;
+  padding: 26px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer p {
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  direction: ltr;
+}
+footer p img {
+  height: 20px;
+}
+footer p i {
+  color: #e2030f;
+}
+footer p a {
+  color: #5db134;
 }/*# sourceMappingURL=style.css.map */
