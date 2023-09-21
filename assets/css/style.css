@@ -321,6 +321,11 @@ main .main-sidebar ul li button {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 576px) {
+  main .main-sidebar ul li button {
+    font-size: 18px;
+  }
+}
 main .main-sidebar ul li button:hover {
   color: #000;
 }
@@ -343,12 +348,12 @@ main .main-sidebar ul li button.active img {
   filter: grayscale(0);
 }
 main .main-sidebar ul li:nth-child(1) button img {
-  -o-object-position: center right;
-     object-position: center right;
+  -o-object-position: bottom right;
+     object-position: bottom right;
 }
 main .main-sidebar ul li:nth-child(2) button img {
-  -o-object-position: center left;
-     object-position: center left;
+  -o-object-position: bottom left;
+     object-position: bottom left;
 }
 main .wrapper {
   padding: 20px 0;
@@ -1763,7 +1768,7 @@ footer p a {
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 24px;
 }
 
 .section-header {
@@ -1809,4 +1814,13 @@ footer p a {
 .section-header .goback i {
   color: #fff;
   font-size: 14px;
+}
+
+.add-ads {
+  margin-top: 48px;
+  font-size: 26px;
+}
+
+.payBtn {
+  width: min(100% - 24px, 500px);
 }/*# sourceMappingURL=style.css.map */

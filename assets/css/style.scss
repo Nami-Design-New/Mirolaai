@@ -307,6 +307,9 @@ main {
           font-size: 24px;
           position: relative;
           overflow: hidden;
+          @media (max-width: 576px) {
+            font-size: 18px;
+          }
           &:hover {
             color: #000;
           }
@@ -330,12 +333,12 @@ main {
         }
         &:nth-child(1) {
           button img {
-            object-position: center right;
+            object-position: bottom right;
           }
         }
         &:nth-child(2) {
           button img {
-            object-position: center left;
+            object-position: bottom left;
           }
         }
       }
@@ -1744,7 +1747,7 @@ footer {
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 24px;
 }
 .section-header {
   width: 100%;
@@ -1787,4 +1790,11 @@ footer {
       font-size: 14px;
     }
   }
+}
+.add-ads {
+  margin-top: 48px;
+  font-size: 26px;
+}
+.payBtn {
+  width: min(100% - 24px, 500px);
 }
