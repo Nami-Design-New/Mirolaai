@@ -1712,13 +1712,16 @@ footer {
     }
   }
 }
-
-
-.advertisingForm{
+.filepond--file-info {
+  align-items: baseline;
+}
+.filepond--file {
+  display: block;
+}
+.advertisingForm {
   width: min(100%, 600px);
   margin: auto;
   display: flex;
   flex-direction: column;
-  // gap: 16px;
   margin-top: 50px;
 }

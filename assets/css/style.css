@@ -1730,6 +1730,14 @@ footer p a {
   color: #5db134;
 }
 
+.filepond--file-info {
+  align-items: baseline;
+}
+
+.filepond--file {
+  display: block;
+}
+
 .advertisingForm {
   width: min(100%, 600px);
   margin: auto;
