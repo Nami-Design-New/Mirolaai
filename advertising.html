@@ -1,4 +1,5 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -6,11 +7,10 @@
     <title>Mirolaai</title>
     <!-- css -->
     <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/apex-charts.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/filepond.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- filebond -->
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,36 +55,28 @@
             </div>
         </nav>
     </header>
-    <main class="advertising-main">
-        <div id="main-wrapper advertising-wrapper" class="container p-3">
+    <main>
+        <div class="container p-3">
             <h1 class="text-center">اضف اعلان</h1>
-            <div class="uploader-lap">
-                <div class="row">
-                    <div class="col-12">
-                        <input id="dropify" type="file" class="filepond" name="filepond" multiple
-                            data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3">
-                    </div>
-                    <div class="col-12 d-flex align-items-center justify-content-center p-4">
-                        <button class="add_btn advertising">
-                            اضافة
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <form action="" class="advertisingForm">
+                <input type="file" class="filepond-multiple">
+                <button class="add_btn" type="submit">
+                    اضافة
+                </button>
+            </form>
         </div>
     </main>
-    <!-- <footer>
-        <p>Made with <i class="fa-sharp fa-solid fa-heart"></i> by
-            <a href="https://nami-tec.com">Nami <img src="assets/images/Subtract.svg" alt="Nami"></a>
-        </p>
-    </footer> -->
 </body>
-<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--/////////////////////////////JavaScript/////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/apexcharts.js"></script>
+<script src="assets/js/filepond.min.js"></script>
 <script src="assets/js/app.js"></script>
-<script>
-    FilePond.parse(document.body);
-</script>
 
 </html>
