@@ -147,3 +147,6 @@ toggler.addEventListener("click", () => {
 $(".filepond-multiple").filepond({
   allowMultiple: true,
 });
+function goBack() {
+  window.history.back();
+};

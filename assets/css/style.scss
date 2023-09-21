@@ -291,11 +291,11 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #fafafa;
+        background-size: cover;
         border-radius: 12px;
         button {
           border-radius: 12px !important;
-          padding: 16px;
+          padding: 32px 16px;
           display: flex;
           align-items: center;
           width: 100%;
@@ -303,18 +303,39 @@ main {
           gap: 8px;
           background: none !important;
           color: #000;
+          font-weight: 500;
+          font-size: 24px;
+          position: relative;
+          overflow: hidden;
           &:hover {
             color: #000;
           }
           img {
-            max-height: 24px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: -1;
+            filter: grayscale(1);
+            background-color: #fff2da;
           }
           &.active {
-            background: #d61842 !important;
-            color: #fff;
             img {
-              filter: brightness(0) invert(1);
+              filter: grayscale(0);
             }
+            color: #d61842 !important;
+          }
+        }
+        &:nth-child(1) {
+          button img {
+            object-position: center right;
+          }
+        }
+        &:nth-child(2) {
+          button img {
+            object-position: center left;
           }
         }
       }
@@ -344,7 +365,7 @@ main {
             visibility: hidden;
           }
           &.active {
-            background: #8d8d8d;
+            background: #d61842;
             border-radius: 6px !important;
             color: #fff;
             border-bottom-color: transparent;
@@ -355,7 +376,7 @@ main {
               }
               &:checked::after {
                 background: #fff;
-                color: #777;
+                color: #d61842;
               }
             }
             .delete {
@@ -1724,4 +1745,46 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+}
+.section-header {
+  width: 100%;
+  background: url('../images/banner.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 80px 32px;
+  @media (max-width: 576px) {
+    padding: 48px 24px;
+  }
+  h3 {
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    margin: 0;
+    a {
+      color: #d61842;
+    }
+    span {
+      padding: 0 8px;
+    }
+  }
+  .goback {
+    margin-left: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cf112c;
+    i {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
 }
