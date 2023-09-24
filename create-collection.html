@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirolaai</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/apex-charts.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/filepond.min.css">
+    <link rel="stylesheet" href="assets/css/bs-stepper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="left-side">
+                    <ul>
+                        <li>
+                            <div class="toogler">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="vendor">
+                                <div class="img">
+                                    <img src="assets/images/vendor.svg" alt="vendor-logo">
+                                    <a href="auth-login.html"><i class="fa-sharp fa-regular fa-power-off"></i></a>
+                                </div>
+                                <div class="vendor-name">
+                                    <h6>beautifo store</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a class="active" href="index.html">المتجر</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="advertising.html">الاعلانات</a></li>
+                        <li><a href="statics.html">الاحصائيات</a></li>
+                        <div class="hidden"><a href="auth-login.html"><i class="fa-sharp fa-regular fa-power-off"></i>
+                                تسجيل الخروج</a></d>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <h1><a href="index.html">Mirolaai</a></h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container p-3">
+            <div class="section-header">
+                <div class="d-flex align-items-center">
+                    <span onclick="goBack()" class="goback">
+                        <i class="fa-sharp fa-light fa-arrow-right"></i>
+                    </span>
+                    <h3>
+                        <a href="index.html">المتجر</a>
+                        <span>/</span> إنشاء كولكشن
+                    </h3>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="bs-stepper wizard-icons wizard-icons-example mt-2">
+                    <div class="bs-stepper-header">
+                        <div class="step" data-target="#lipgloss-wizard">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-icon">
+                                    <img src="assets/images/libgloss.svg" alt="icon">
+                                </span>
+                                <span class="bs-stepper-label"> ملمع شفاة </span>
+                            </button>
+                        </div>
+                        <div class="line">
+                            <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div class="step" data-target="#foundation-wizard">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-icon">
+                                    <img src="assets/images/foundation.svg" alt="icon">
+                                </span>
+                                <span class="bs-stepper-label"> فاونديشن </span>
+                            </button>
+                        </div>
+                        <div class="line">
+                            <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div class="step" data-target="#eyelashes-wizard">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-icon">
+                                    <img src="assets/images/eyelashes.svg" alt="icon">
+                                </span>
+                                <span class="bs-stepper-label">رموش</span>
+                            </button>
+                        </div>
+                        <div class="line">
+                            <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div class="step" data-target="#eyeliner-wizard">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-icon">
+                                    <img src="assets/images/eyeliner.svg" alt="icon">
+                                </span>
+                                <span class="bs-stepper-label">ايلاينر</span>
+                            </button>
+                        </div>
+                        <div class="line">
+                            <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div class="step" data-target="#review-submit">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-icon">
+                                    <img src="assets/images/Submit.svg" alt="icon">
+                                </span>
+                                <span class="bs-stepper-label">مراجعة وإرسال</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bs-stepper-content">
+                        <form onSubmit="return false">
+                            <!-- lipgloss-wizard -->
+                            <div id="lipgloss-wizard" class="content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="sephora-product" id="sephora-product"
+                                                    class="check products-sephora" data-product="sephora-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss12.webp" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">
+                                                    SEPHORA
+                                                </a>
+                                                <p class="product_name">
+                                                    Cream Lip Stain Liquid Lipstick
+                                                </p>
+                                                <p class="colors-num">
+                                                    74 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="sephora-product" id="sephora-product"
+                                                    class="check products-sephora" data-product="sephora-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss13.webp" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">
+                                                    SEPHORA
+                                                </a>
+                                                <p class="product_name">
+                                                    Lip Last Matte Lipstick
+                                                </p>
+                                                <p class="colors-num">
+                                                    20 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between align-items-center pt-4">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                            <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                        </button>
+                                        <button class="btn y btn-next add_btn">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">التالى</span>
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- foundation-wizard -->
+                            <div id="foundation-wizard" class="content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="fenty-Beauty-product"
+                                                    id="fenty-Beauty-product" class="check products-fentybeauty"
+                                                    data-product="fentybeauty-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss5.jpeg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">
+                                                    Fenty Beauty
+                                                </a>
+                                                <p class="product_name">
+                                                    Gloss Bomb Cream Color Drip Lip
+                                                    Cream
+                                                </p>
+                                                <p class="colors-num">
+                                                    5 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="fenty-Beauty-product"
+                                                    id="fenty-Beauty-product" class="check products-fentybeauty"
+                                                    data-product="fentybeauty-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss6.jpeg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">
+                                                    Fenty Beauty
+                                                </a>
+                                                <p class="product_name">
+                                                    Stunna Lip Paint Longwear Fluid Lip
+                                                    Color
+                                                </p>
+                                                <p class="colors-num">
+                                                    5 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between align-items-center pt-4">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                            <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                        </button>
+                                        <button class="btn y btn-next add_btn">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">التالى</span>
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- eyelashes-wizard -->
+                            <div id="eyelashes-wizard" class="content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="rare-Beauty-product"
+                                                    id="rare-Beauty-product" class="check products-RareBeauty"
+                                                    data-product="RareBeauty-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss.jpg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Rare
+                                                    Beauty</a>
+                                                <p class="product_name">
+                                                    Soft Pinch Liquid Blush
+                                                </p>
+                                                <p class="colors-num">
+                                                    8 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="rare-Beauty-product"
+                                                    id="rare-Beauty-product" class="check products-RareBeauty"
+                                                    data-product="RareBeauty-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss7.jpeg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Rare
+                                                    Beauty</a>
+                                                <p class="product_name">
+                                                    With Gratitude Dewy Lip Balm
+                                                </p>
+                                                <p class="colors-num">
+                                                    6 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between align-items-center pt-4">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                            <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                        </button>
+                                        <button class="btn y btn-next add_btn">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">التالى</span>
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- eyeliner-wizard -->
+                            <div id="eyeliner-wizard" class="content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="glossier-product" id="glossier-product"
+                                                    class="check products-Glossier" data-product="glossier-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/cream-3.png" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Glossier</a>
+                                                <p class="product_name">
+                                                    Pencil Creamy Long-Wearing Eyeliner
+                                                </p>
+                                                <p class="colors-num">
+                                                    10 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                                <input type="checkbox" name="glossier-product" id="glossier-product"
+                                                    class="check products-Glossier" data-product="glossier-pro"
+                                                    onchange="selectionFunction(this , document.querySelectorAll('.color-selct'))">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss2.jpg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Glossier</a>
+                                                <p class="product_name">
+                                                    Glassy High-Shine Lip Gloss
+                                                </p>
+                                                <p class="colors-num">
+                                                    3 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between align-items-center pt-4">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                            <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                        </button>
+                                        <button class="btn y btn-next add_btn">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">التالى</span>
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Review -->
+                            <div id="review-submit" class="content">
+                                <h4 >المنتجات التى تم اضافتها للكوليكشن</h4>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="select-pro products-libgloss">
+                                            </div>
+                                            <div class="pro-img">
+                                                <img src="assets/images/cream-3.png" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Glossier</a>
+                                                <p class="product_name">
+                                                    Pencil Creamy Long-Wearing Eyeliner
+                                                </p>
+                                                <p class="colors-num">
+                                                    10 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss2.jpg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Glossier</a>
+                                                <p class="product_name">
+                                                    Glassy High-Shine Lip Gloss
+                                                </p>
+                                                <p class="colors-num">
+                                                    3 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss.jpg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Rare
+                                                    Beauty</a>
+                                                <p class="product_name">
+                                                    Soft Pinch Liquid Blush
+                                                </p>
+                                                <p class="colors-num">
+                                                    8 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-6 p-2">
+                                        <div class="product_frame">
+                                            <div class="pro-img">
+                                                <img src="assets/images/libgloss7.jpeg" alt="women-libgloss">
+                                                <div class="layer">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal">
+                                                        Quick View <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="pro-description">
+                                                <a href="#" class="brand_name">Rare
+                                                    Beauty</a>
+                                                <p class="product_name">
+                                                    With Gratitude Dewy Lip Balm
+                                                </p>
+                                                <p class="colors-num">
+                                                    6 colors
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between align-items-center pt-4">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                    </button>
+                                    <button class="btn y btn-next add_btn">
+                                        <span class="align-middle d-sm-inline-block d-none me-sm-1">إنشاء</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade product-modal" id="productModal" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row gap-lg-0 gap-md-0 gap-4">
+                            <div class="col-8 col-md-8 col-12">
+                                <div class="product-description">
+                                    <p class="brand_name">
+                                        Rare Beauty by Selena Gomez
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </p>
+                                    <h6 class="product_name">
+                                        <a href="product-details.html">Soft Pinch Liquid Blush</a>
+                                    </h6>
+                                    <p class="product_description">
+                                        A weightless, long-lasting liquid blush that blends
+                                        and builds beautifully for a soft, healthy flush. Available in matte and dewy
+                                        finishes.
+                                    </p>
+                                    <div class="price">
+                                        <h6>$64.00</h6>
+                                    </div>
+                                    <span class="size">SIZE 0.25 oz / 7.5 mL • ITEM 2640241</span>
+                                    <!-- changing on hover colors -->
+                                    <span class="color-name">
+                                        Color: Grateful - dewy true red
+                                    </span>
+                                    <h6 class="available">Available colors</h6>
+                                    <ul class="colors">
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-1"
+                                                style="background: url('assets/images/libgloss+1.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-2"
+                                                style="background: url('assets/images/libgloss+2.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-3"
+                                                style="background: url('assets/images/libgloss+3.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-4"
+                                                style="background: url('assets/images/libgloss+4.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-5"
+                                                style="background: url('assets/images/libgloss+5.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-6"
+                                                style="background: url('assets/images/libgloss+6.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-7"
+                                                style="background: url('assets/images/libgloss+7.jpg');"
+                                                class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="color-select" id="color-select-8"
+                                                style="background: #e91e63" class="color-selct"
+                                                onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
+                                        </li>
+                                        <li class="select-all">
+                                            <input class="check" type="checkbox" id="checkall" name="checkall"
+                                                onchange="selectionFunction(this, document.querySelectorAll('.color-selct'))">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-4 col-12">
+                                <div class="img">
+                                    <img src="assets/images/libgloss.jpg" alt="libgloss">
+                                    <div class="layer">
+                                        <a href="try-on.html">TRY ON</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-4 pt-3">
+                                <button class="add_btn">
+                                    Add Product
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--/////////////////////////////JavaScript/////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////-->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/apexcharts.js"></script>
+<script src="assets/js/filepond.min.js"></script>
+<script src="assets/js/bs-stepper.js"></script>
+<script src="assets/js/form-wizard-icons.js"></script>
+<script src="assets/js/app.js"></script>
+
+</html>

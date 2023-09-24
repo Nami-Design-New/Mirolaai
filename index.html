@@ -101,7 +101,7 @@
                                                         ملمع شفاة
                                                         <input class="check" type="checkbox"
                                                             name="all-libgloss-selector" id="all-libgloss-selector"
-                                                            onchange="categorySelectionFunction(this, document.querySelectorAll('.brands-libgloss'), document.querySelectorAll('.libgloss_products input'))">
+                                                            data-category="libgloss">
                                                     </div>
                                                 </button>
                                             </li>
@@ -115,7 +115,7 @@
                                                         فاونديشن
                                                         <input class="check" type="checkbox"
                                                             name="all-foundation-selector" id="all-foundation-selector"
-                                                            onchange="selectionFunction(this, document.querySelectorAll('.brands-foundation'))">
+                                                            data-category="foundation">
                                                     </div>
                                                 </button>
                                             </li>
@@ -129,7 +129,7 @@
                                                         رموش
                                                         <input class="check" type="checkbox"
                                                             name="all-eyelashes-selector" id="all-eyelashes-selector"
-                                                            onchange="selectionFunction(this, document.querySelectorAll('.brands-eyelaches'))">
+                                                            data-category="eyelashes">
                                                     </div>
                                                 </button>
                                             </li>
@@ -143,7 +143,7 @@
                                                         ايلاينر
                                                         <input class="check" type="checkbox"
                                                             name="all-eyeliner-selector" id="all-eyeliner-selector"
-                                                            onchange="selectionFunction(this, document.querySelectorAll('.brands-eyeliner'))">
+                                                            data-category="eyeliner">
                                                     </div>
                                                 </button>
                                             </li>
@@ -166,7 +166,7 @@
                                                                     SEPHORA
                                                                     <input type="checkbox" name="SEPHORA" id="SEPHORA"
                                                                         class="brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.sephora-libgloss'))">
+                                                                        data-brand="sephora">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -180,7 +180,7 @@
                                                                     Fenty Beauty
                                                                     <input type="checkbox" name="FentyBeauty"
                                                                         id="FentyBeauty" class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.fenty-beauty-libgloss'))">
+                                                                        data-brand="fentybeauty">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -194,7 +194,7 @@
                                                                     Rare Beauty
                                                                     <input type="checkbox" name="RareBeauty"
                                                                         id="RareBeauty" class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.rare-Beauty-libgloss'))">
+                                                                        data-brand="RareBeauty">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -208,7 +208,7 @@
                                                                     Glossier
                                                                     <input type="checkbox" name="Glossier" id="Glossier"
                                                                         class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.glossier-libgloss'))">
+                                                                        data-brand="Glossier">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -222,7 +222,7 @@
                                                                     Hourglass
                                                                     <input type="checkbox" name="Hourglass"
                                                                         id="Hourglass" class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.hourglass-libgloss'))">
+                                                                        data-brand="Hourglass">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -236,7 +236,7 @@
                                                                     <img src=" assets/images/brand-1.png" alt="brand">
                                                                     <input type="checkbox" name="brand-2" id="brand-2"
                                                                         class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.Lancôme-libgloss'))">
+                                                                        data-brand="Lancôme">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -251,7 +251,7 @@
                                                                     <img src="assets/images/brand-2.png" alt="brand">
                                                                     <input type="checkbox" name="brand-3" id="brand-3"
                                                                         class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.beverlyHills-libgloss'))">
+                                                                        data-brand="beverlyHills">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -265,7 +265,7 @@
                                                                     Dior
                                                                     <input type="checkbox" name="Dior" id="Dior"
                                                                         class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.dior-libgloss'))">
+                                                                        data-brand="Dior">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -279,7 +279,7 @@
                                                                     Lilly Lashes
                                                                     <input type="checkbox" name="LillyLashes"
                                                                         id="LillyLashes" class=" brands-libgloss check"
-                                                                        onchange="selectionFunction(this, document.querySelectorAll('.Lilly-Lashes-libgloss'))">
+                                                                        data-brand="LillyLashes">
                                                                 </div>
                                                             </button>
                                                         </li>
@@ -293,11 +293,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="sephora-product"
                                                                                     id="sephora-product"
-                                                                                    class="check sephora-libgloss">
+                                                                                    class="check products-sephora"
+                                                                                    data-product="sephora-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss12.webp"
@@ -320,19 +321,17 @@
                                                                                 <p class="colors-num">
                                                                                     74 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $15.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="sephora-product"
                                                                                     id="sephora-product"
-                                                                                    class="check sephora-libgloss">
+                                                                                    class="check products-sephora"
+                                                                                    data-product="sephora-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss13.webp"
@@ -355,9 +354,6 @@
                                                                                 <p class="colors-num">
                                                                                     20 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $7.50
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -369,11 +365,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="fenty-Beauty-product"
                                                                                     id="fenty-Beauty-product"
-                                                                                    class="check fenty-Beauty-libgloss">
+                                                                                    class="check products-fentybeauty"
+                                                                                    data-product="fentybeauty-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss5.jpeg"
@@ -397,19 +394,17 @@
                                                                                 <p class="colors-num">
                                                                                     5 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $22.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="fenty-Beauty-product"
                                                                                     id="fenty-Beauty-product"
-                                                                                    class="check fenty-Beauty-libgloss">
+                                                                                    class="check products-fentybeauty"
+                                                                                    data-product="fentybeauty-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss6.jpeg"
@@ -433,9 +428,6 @@
                                                                                 <p class="colors-num">
                                                                                     5 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $28.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -447,11 +439,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="rare-Beauty-product"
                                                                                     id="rare-Beauty-product"
-                                                                                    class="check rare-Beauty-libgloss">
+                                                                                    class="check products-RareBeauty"
+                                                                                    data-product="RareBeauty-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss.jpg"
@@ -473,19 +466,17 @@
                                                                                 <p class="colors-num">
                                                                                     8 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $64.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="rare-Beauty-product"
                                                                                     id="rare-Beauty-product"
-                                                                                    class="check rare-Beauty-libgloss">
+                                                                                    class="check products-RareBeauty"
+                                                                                    data-product="RareBeauty-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss7.jpeg"
@@ -507,9 +498,6 @@
                                                                                 <p class="colors-num">
                                                                                     6 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $16.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -521,11 +509,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="glossier-product"
                                                                                     id="glossier-product"
-                                                                                    class="check glossier-libgloss">
+                                                                                    class="check products-Glossier"
+                                                                                    data-product="glossier-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream-3.png"
@@ -547,19 +536,17 @@
                                                                                 <p class="colors-num">
                                                                                     10 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $16.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="glossier-product"
                                                                                     id="glossier-product"
-                                                                                    class="check glossier-libgloss">
+                                                                                    class="check products-Glossier"
+                                                                                    data-product="glossier-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss2.jpg"
@@ -581,9 +568,6 @@
                                                                                 <p class="colors-num">
                                                                                     3 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $15.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -595,11 +579,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="hourglass-product"
                                                                                     id="hourglass-product"
-                                                                                    class="check hourglass-libgloss">
+                                                                                    class="check products-Hourglass"
+                                                                                    data-product="hourglass-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss3.jpg"
@@ -621,19 +606,17 @@
                                                                                 <p class="colors-num">
                                                                                     12 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $36.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="hourglass-product"
                                                                                     id="hourglass-product"
-                                                                                    class="check hourglass-libgloss">
+                                                                                    class="check products-Hourglass"
+                                                                                    data-product="hourglass-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss8.jpeg"
@@ -655,9 +638,6 @@
                                                                                 <p class="colors-num">
                                                                                     12 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $18.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -669,11 +649,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="Lancôme-product"
                                                                                     id="Lancôme-product"
-                                                                                    class="check Lancôme-libgloss">
+                                                                                    class="check products-Lancôme"
+                                                                                    data-product="Lancôme-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream1.jpeg"
@@ -694,19 +675,17 @@
                                                                                     Circle Eye
                                                                                     Cream
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $64.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="Lancôme-product"
                                                                                     id="Lancôme-product"
-                                                                                    class="check Lancôme-libgloss">
+                                                                                    class="check products-Lancôme"
+                                                                                    data-product="Lancôme-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream5.jpeg"
@@ -726,9 +705,6 @@
                                                                                     Rénergie Lift Multi-Action Ultra
                                                                                     Dark Circle Correcting Eye Cream
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $82.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -741,11 +717,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="beverlyHills-product"
                                                                                     id="beverlyHills-product"
-                                                                                    class="check beverlyHills-libgloss">
+                                                                                    class="check products-beverlyHills"
+                                                                                    data-product="beverlyHills-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream2.jpeg"
@@ -765,19 +742,17 @@
                                                                                     Lash Sculpt Lengthening & Volumizing
                                                                                     Mascara
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $26.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="beverlyHills-product"
                                                                                     id="beverlyHills-product"
-                                                                                    class="check beverlyHills-libgloss">
+                                                                                    class="check products-beverlyHills"
+                                                                                    data-product="beverlyHills-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream6.webp"
@@ -796,9 +771,6 @@
                                                                                 <p class="product_name">
                                                                                     Perfect Brow Pencil
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $23.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -810,11 +782,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="dior-product"
                                                                                     id="dior-product"
-                                                                                    class="check dior-libgloss">
+                                                                                    class="check products-Dior"
+                                                                                    data-product="Dior-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss4.jpg"
@@ -836,19 +809,17 @@
                                                                                 <p class="colors-num">
                                                                                     23 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $64.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="dior-product"
                                                                                     id="dior-product"
-                                                                                    class="check dior-libgloss">
+                                                                                    class="check products-Dior"
+                                                                                    data-product="Dior-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss11.webp"
@@ -869,9 +840,6 @@
                                                                                 <p class="colors-num">
                                                                                     22 colors
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $32.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -883,11 +851,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="Lilly-Lashes-product"
                                                                                     id="Lilly-Lashes-product"
-                                                                                    class="check Lilly-Lashes-libgloss">
+                                                                                    class="check products-LillyLashes"
+                                                                                    data-product="LillyLashes-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/cream4.jpeg"
@@ -906,19 +875,17 @@
                                                                                 <p class="product_name">
                                                                                     Level Up Lash Conditioning Serum
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $64.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-3 col-md-4 col-6 p-2">
                                                                         <div class="product_frame">
-                                                                            <div class="select-pro libgloss_products">
+                                                                            <div class="select-pro products-libgloss">
                                                                                 <input type="checkbox"
                                                                                     name="Lilly-Lashes-product"
                                                                                     id="Lilly-Lashes-product"
-                                                                                    class="check Lilly-Lashes-libgloss">
+                                                                                    class="check products-LillyLashes"
+                                                                                    data-product="LillyLashes-pro">
                                                                             </div>
                                                                             <div class="pro-img">
                                                                                 <img src="assets/images/libgloss10.webp"
@@ -937,9 +904,6 @@
                                                                                 <p class="product_name">
                                                                                     Click Magnetic Liquid Eyeliner
                                                                                 </p>
-                                                                                <span class="price">
-                                                                                    $34.00
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -961,6 +925,13 @@
                     aria-labelledby="pills-collections-tab">
                     <div class="container mt-4 p-0">
                         <div class="row">
+                            <div class="note">
+                                <p>
+                                    <i class="fa-sharp fa-light fa-circle-exclamation"></i>
+                                    ملحوظة : يمكنك إختيار 3 كولكشنز فقط
+                                </p>
+                                <span><b> 2 </b> / 3</span>
+                            </div>
                             <div class="col-lg-3 col-md-4 col-6 p-2">
                                 <div class="product_frame">
                                     <div class="select-pro">
@@ -969,9 +940,7 @@
                                     <div class="pro-img">
                                         <img src="assets/images/collection-1.jpeg" alt="women-libgloss">
                                         <div class="layer">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#collectionModal">
-                                                Quick View <i class="fa-regular fa-eye"></i>
-                                            </a>
+                                            <a href="try-on.html">TRY ON</a>
                                         </div>
                                     </div>
                                     <div class="pro-description">
@@ -980,11 +949,12 @@
                                             Giorgio Armani Holiday 2017 Lip Sets
                                         </p>
                                         <p class="colors-num">
-                                            8 colors
+                                            Products : 7
                                         </p>
-                                        <span class="price">
-                                            $64.00
-                                        </span>
+                                        <a class="view-products" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
+                                            View Products <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -996,9 +966,7 @@
                                     <div class="pro-img">
                                         <img src="assets/images/collection-2.jpeg" alt="women-libgloss">
                                         <div class="layer">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#collectionModal">
-                                                Quick View <i class="fa-regular fa-eye"></i>
-                                            </a>
+                                            <a href="try-on.html">TRY ON</a>
                                         </div>
                                     </div>
                                     <div class="pro-description">
@@ -1007,11 +975,12 @@
                                             Rare beauty's new Soft pinch tinted lip oil
                                         </p>
                                         <p class="colors-num">
-                                            3 colors
+                                            Products : 6
                                         </p>
-                                        <span class="price">
-                                            $15.00
-                                        </span>
+                                        <a class="view-products" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
+                                            View Products <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1023,9 +992,7 @@
                                     <div class="pro-img">
                                         <img src="assets/images/collection-3.png" alt="women-libgloss">
                                         <div class="layer">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#collectionModal">
-                                                Quick View <i class="fa-regular fa-eye"></i>
-                                            </a>
+                                            <a href="try-on.html">TRY ON</a>
                                         </div>
                                     </div>
                                     <div class="pro-description">
@@ -1034,11 +1001,12 @@
                                             Vegan at Bergdorf Goodman
                                         </p>
                                         <p class="colors-num">
-                                            12 colors
+                                            Products : 5
                                         </p>
-                                        <span class="price">
-                                            $36.00
-                                        </span>
+                                        <a class="view-products" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
+                                            View Products <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1050,9 +1018,7 @@
                                     <div class="pro-img">
                                         <img src="assets/images/collection-4.jpeg" alt="women-libgloss">
                                         <div class="layer">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#collectionModal">
-                                                Quick View <i class="fa-regular fa-eye"></i>
-                                            </a>
+                                            <a href="try-on.html">TRY ON</a>
                                         </div>
                                     </div>
                                     <div class="pro-description">
@@ -1061,11 +1027,12 @@
                                             Hourglass Lip Treatment Oils
                                         </p>
                                         <p class="colors-num">
-                                            23 colors
+                                            Products : 12
                                         </p>
-                                        <span class="price">
-                                            $64.00
-                                        </span>
+                                        <a class="view-products" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
+                                            View Products <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1077,9 +1044,7 @@
                                     <div class="pro-img">
                                         <img src="assets/images/collection-5.jpeg" alt="women-libgloss">
                                         <div class="layer">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#collectionModal">
-                                                Quick View <i class="fa-regular fa-eye"></i>
-                                            </a>
+                                            <a href="try-on.html">TRY ON</a>
                                         </div>
                                     </div>
                                     <div class="pro-description">
@@ -1088,11 +1053,12 @@
                                             Hourglass Beauty mackup collection
                                         </p>
                                         <p class="colors-num">
-                                            8 colors
+                                            Products : 8
                                         </p>
-                                        <span class="price">
-                                            $64.00
-                                        </span>
+                                        <a class="view-products" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
+                                            View Products <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1104,9 +1070,7 @@
                                     <div class="pro-img">
                                         <img src="assets/images/collection-6.jpeg" alt="women-libgloss">
                                         <div class="layer">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#collectionModal">
-                                                Quick View <i class="fa-regular fa-eye"></i>
-                                            </a>
+                                            <a href="try-on.html">TRY ON</a>
                                         </div>
                                     </div>
                                     <div class="pro-description">
@@ -1115,11 +1079,12 @@
                                             Hourglass Lip Treatment Oils | British Beauty Blogger
                                         </p>
                                         <p class="colors-num">
-                                            3 colors
+                                            Products : 5
                                         </p>
-                                        <span class="price">
-                                            $15.00
-                                        </span>
+                                        <a class="view-products" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
+                                            View Products <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1165,50 +1130,49 @@
                                     <ul class="colors">
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-1"
-                                                style="background-image: url('assets/images/libgloss+1.jpg');"
+                                                style="background: url('assets/images/libgloss+1.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-2"
-                                                style="background-image: url('assets/images/libgloss+2.jpg');"
+                                                style="background: url('assets/images/libgloss+2.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-3"
-                                                style="background-image: url('assets/images/libgloss+3.jpg');"
+                                                style="background: url('assets/images/libgloss+3.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-4"
-                                                style="background-image: url('assets/images/libgloss+4.jpg');"
+                                                style="background: url('assets/images/libgloss+4.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-5"
-                                                style="background-image: url('assets/images/libgloss+5.jpg');"
+                                                style="background: url('assets/images/libgloss+5.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-6"
-                                                style="background-image: url('assets/images/libgloss+6.jpg');"
+                                                style="background: url('assets/images/libgloss+6.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-7"
-                                                style="background-image: url('assets/images/libgloss+7.jpg');"
+                                                style="background: url('assets/images/libgloss+7.jpg');"
                                                 class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li>
                                             <input type="checkbox" name="color-select" id="color-select-8"
-                                                style="background-image: url('assets/images/libgloss+8.jpg');"
-                                                class="color-selct"
+                                                style="background: #e91e63" class="color-selct"
                                                 onchange="catchChange( document.querySelectorAll('.color-selct') , document.getElementById('checkall'))">
                                         </li>
                                         <li class="select-all">
@@ -1226,7 +1190,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 p-4 pt-0">
+                            <div class="col-12 p-4 pt-3">
                                 <button class="add_btn">
                                     Add Product
                                 </button>
@@ -1250,12 +1214,9 @@
                             </div>
                             <div class="col-lg-4 col-6 p-2">
                                 <div class="product_frame">
-                                    <div class="pro-img">
+                                    <a href="product-details.html" class="pro-img">
                                         <img src="assets/images/cream2.jpeg" alt="women-libgloss">
-                                        <div class="layer">
-                                            <a href="try-on.html">TRY ON</a>
-                                        </div>
-                                    </div>
+                                    </a>
                                     <div class="pro-description">
                                         <a href="#" class="brand_name">Anastasia Beverly
                                             Hills</a>
@@ -1267,12 +1228,9 @@
                             </div>
                             <div class="col-lg-4 col-6 p-2">
                                 <div class="product_frame">
-                                    <div class="pro-img">
+                                    <a href="product-details.html" class="pro-img">
                                         <img src="assets/images/libgloss3.jpg" alt="women-libgloss">
-                                        <div class="layer">
-                                            <a href="try-on.html">TRY ON</a>
-                                        </div>
-                                    </div>
+                                    </a>
                                     <div class="pro-description">
                                         <a href="#" class="brand_name">Hourglass</a>
                                         <p class="product_name">
@@ -1283,12 +1241,9 @@
                             </div>
                             <div class="col-lg-4 col-6 p-2">
                                 <div class="product_frame">
-                                    <div class="pro-img">
+                                    <a href="product-details.html" class="pro-img">
                                         <img src="assets/images/libgloss4.jpg" alt="women-libgloss">
-                                        <div class="layer">
-                                            <a href="try-on.html">TRY ON</a>
-                                        </div>
-                                    </div>
+                                    </a>
                                     <div class="pro-description">
                                         <a href="#" class="brand_name">Dior</a>
                                         <p class="product_name">
@@ -1319,5 +1274,6 @@
 <script src="assets/js/apexcharts.js"></script>
 <script src="assets/js/filepond.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/shop.js"></script>
 
 </html>

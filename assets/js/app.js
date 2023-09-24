@@ -17,29 +17,11 @@ for (var i = 0; i < navLinks.length; i++) {
 //catchChange for un setting selectall btn
 function selectionFunction(input, arr) {
   if (input.checked === false) {
-    arr.forEach((c) => {
+    arr.forEach(c => {
       c.checked = false;
     });
   } else {
-    arr.forEach((c) => {
-      c.checked = true;
-    });
-  }
-}
-// level one parent category selection function
-function categorySelectionFunction(input, brandsArr, productsArr) {
-  if (input.checked === false) {
-    brandsArr.forEach((c) => {
-      c.checked = false;
-    });
-    productsArr.forEach((c) => {
-      c.checked = false;
-    });
-  } else {
-    brandsArr.forEach((c) => {
-      c.checked = true;
-    });
-    productsArr.forEach((c) => {
+    arr.forEach(c => {
       c.checked = true;
     });
   }
@@ -63,7 +45,7 @@ var filtersChartOptions = {
   series: [44, 55, 41, 17, 15],
   labels: ["كحل", "ملمع شفاة", "ماسكرا", "روچ", "احمر خدود"],
   chart: {
-    type: "donut",
+    type: "donut"
   },
   colors: ["#c7f9ee", "#6dfdd2", "#1de4bd", "#1bd4d4", "#1ac9e6"],
   responsive: [
@@ -71,11 +53,11 @@ var filtersChartOptions = {
       breakpoint: 480,
       options: {
         legend: {
-          position: "bottom",
-        },
-      },
-    },
-  ],
+          position: "bottom"
+        }
+      }
+    }
+  ]
 };
 var chart = new ApexCharts(
   document.querySelector("#filtersChart"),
@@ -87,26 +69,26 @@ var mostUsedBrandsOptions = {
   series: [
     {
       name: "SEPHORA",
-      data: [35, 40, 20, 50, 10, 30, 40],
+      data: [35, 40, 20, 50, 10, 30, 40]
     },
     {
       name: "Rare Beauty",
-      data: [15, 35, 25, 10, 40, 45, 5],
+      data: [15, 35, 25, 10, 40, 45, 5]
     },
     {
       name: "Hourglass",
-      data: [60, 35, 20, 65, 15, 45, 50],
+      data: [60, 35, 20, 65, 15, 45, 50]
     },
     {
       name: "Fenty Beauty",
-      data: [45, 25, 10, 45, 23, 14, 55],
-    },
+      data: [45, 25, 10, 45, 23, 14, 55]
+    }
   ],
   colors: ["#1bd4d4", "#1ac9e6", "#19aade", "#176ba0", "#142459"],
   chart: {
     type: "bar",
     height: 400,
-    stacked: true,
+    stacked: true
   },
   responsive: [
     {
@@ -115,17 +97,17 @@ var mostUsedBrandsOptions = {
         legend: {
           position: "bottom",
           offsetX: -10,
-          offsetY: 0,
-        },
-      },
-    },
+          offsetY: 0
+        }
+      }
+    }
   ],
   xaxis: {
-    categories: ["sa", "su", "mo", "tu", "we", "th", "fr"],
+    categories: ["sa", "su", "mo", "tu", "we", "th", "fr"]
   },
   fill: {
-    opacity: 1,
-  },
+    opacity: 1
+  }
 };
 var chart = new ApexCharts(
   document.querySelector("#mostusedbrands"),
@@ -145,8 +127,8 @@ toggler.addEventListener("click", () => {
 });
 // filepond
 $(".filepond-multiple").filepond({
-  allowMultiple: true,
+  allowMultiple: true
 });
 function goBack() {
   window.history.back();
-};
+}
