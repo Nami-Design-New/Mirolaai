@@ -2,51 +2,32 @@
 // categories slider
 let categoriesSlider = new Swiper(".categories-slider", {
   spaceBetween: 0,
+  direction: "vertical",
   grabCursor: true,
-  slidesPerView: 5,
-  breakpoints: {
-    992: {
-      slidesPerView: 5
-    },
-    768: {
-      slidesPerView: 4
-    },
-    350: {
-      slidesPerView: 3
-    }
-  }
+  slidesPerView: 5
 });
 // brands slider
 let brandsSlider = new Swiper(".brands-slider", {
   spaceBetween: 0,
+  direction: "vertical",
   grabCursor: true,
-  slidesPerView: 4,
-  breakpoints: {
-    992: {
-      slidesPerView: 4
-    },
-    768: {
-      slidesPerView: 3
-    },
-    350: {
-      slidesPerView: 2
-    }
-  }
+  slidesPerView: 4
 });
 // colors slider
 let colorsSlider = new Swiper(".colors-slider", {
   spaceBetween: 0,
   grabCursor: true,
-  slidesPerView: 4,
+  centeredSlides: true,
+  loop: true,
   breakpoints: {
     992: {
-      slidesPerView: 4
+      slidesPerView: 9
     },
     768: {
-      slidesPerView: 3
+      slidesPerView: 5
     },
     350: {
-      slidesPerView: 2
+      slidesPerView: 5
     }
   }
 });
@@ -54,8 +35,7 @@ let colorsSlider = new Swiper(".colors-slider", {
 let categoriesSlides = document.querySelectorAll(
   ".categories-slider .swiper-slide"
 );
-let brandsSlides = document.querySelectorAll(".brands-slider .swiper-slide");
-let swipersWrapper = document.querySelector(".main-swipers-wrap");
+let swipersWrapper = document.querySelector(".categories-brands-swipers");
 let selectedItem = document.querySelector(".selected_item");
 let expandBtn = document.querySelector(".expand");
 // from level 1 to level 2 function
@@ -74,31 +54,10 @@ categoriesSlides.forEach(slide => {
     selectedItem.querySelector("h6").innerHTML = clickedItemName;
   });
 });
-//from level 2 to level 3 function
-brandsSlides.forEach(slide => {
-  slide.addEventListener("click", e => {
-    swipersWrapper.classList.add("colors-show");
-    let clickedItem = e.target.closest(".swiper-slide");
-    let clickedItemImageSrc, clickedItemName;
-    if (clickedItem) {
-      clickedItemImageSrc = clickedItem.querySelector(".icon img").src;
-      clickedItemName = clickedItem.querySelector("h6").innerHTML;
-    }
-    selectedItem.querySelector(".icon img").src = clickedItemImageSrc;
-    selectedItem.querySelector("h6").innerHTML = clickedItemName;
-  });
-});
 // expanding button
 expandBtn.addEventListener("click", () => {
-  if (
-    swipersWrapper.classList.contains("brands-show") &&
-    swipersWrapper.classList.contains("colors-show")
-  ) {
-    swipersWrapper.classList.remove("colors-show");
-  } else {
-    swipersWrapper.classList.remove("brands-show");
-    selectedItem.classList.remove("show");
-  }
+  swipersWrapper.classList.remove("brands-show");
+  selectedItem.classList.remove("show");
 });
 // text trim
 $(document).ready(function() {
@@ -113,7 +72,7 @@ $(document).ready(function() {
 });
 /*advertisments show hide if user not active for 10s*/
 let isblock = false;
-const delayTime = 10000;
+const delayTime = 300000;
 function showAdvertisements() {
   const advertisementsWrap = document.querySelector(".advertisments_wrap");
   if (advertisementsWrap) {
