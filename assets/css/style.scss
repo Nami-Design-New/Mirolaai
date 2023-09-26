@@ -1585,10 +1585,8 @@ main {
       img {
         width: 100%;
         height: 100%;
-        -o-object-fit: contain;
-        object-fit: contain;
-        -o-object-position: top;
-        object-position: bottom center;
+        object-fit: cover;
+        object-position: center;
       }
       iframe {
         width: 100%;
@@ -1613,6 +1611,7 @@ main {
             padding: 8px;
             transition: .3s ease-in-out;
             .color-holder {
+              background-size: cover !important;
               width: 45px;
               height: 45px;
               border-radius: 50%;
@@ -1646,13 +1645,14 @@ main {
         width: 100px;
         height: calc(100% - 100px);
         display: grid;
-        background: #fff;
+        backdrop-filter: blur(16px) saturate(180%);
+        background-color: #ffffffb3;
         border-right: 0;
         grid-template-columns: 1fr;
         .selected_item {
           display: none;
           position: absolute;
-          height: 120px;
+          height: 130px;
           width: 100px;
           left: 0;
           top: 0;
@@ -1660,7 +1660,7 @@ main {
           background: #fafafa;
           .item {
             width: 100px;
-            height: 100%;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1680,7 +1680,7 @@ main {
           .expand {
             background: #f4f4f4;
             width: 100%;
-            height: 24px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1732,8 +1732,8 @@ main {
           visibility: hidden;
           grid-column: 1 / 2;
           grid-row: 1 / 2;
-          margin-top: 120px;
-          height: calc(100% - 120px);
+          margin-top: 130px;
+          height: calc(100% - 130px);
         }
         &.brands-show {
           .categories-slider {

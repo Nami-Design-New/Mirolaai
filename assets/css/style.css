@@ -1607,10 +1607,10 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 .try-on-main #try-on .model-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-  -o-object-position: top;
-  object-position: bottom center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .try-on-main #try-on .model-wrap iframe {
   width: 100%;
@@ -1638,6 +1638,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   transition: 0.3s ease-in-out;
 }
 .try-on-main #try-on .model-wrap .colors-pallete .colors-slider .swiper-slide .color-holder {
+  background-size: cover !important;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -1666,14 +1667,16 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   width: 100px;
   height: calc(100% - 100px);
   display: grid;
-  background: #fff;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+          backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.7019607843);
   border-right: 0;
   grid-template-columns: 1fr;
 }
 .try-on-main #try-on .model-wrap .categories-brands-swipers .selected_item {
   display: none;
   position: absolute;
-  height: 120px;
+  height: 130px;
   width: 100px;
   left: 0;
   top: 0;
@@ -1682,7 +1685,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 }
 .try-on-main #try-on .model-wrap .categories-brands-swipers .selected_item .item {
   width: 100px;
-  height: 100%;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1702,7 +1705,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 .try-on-main #try-on .model-wrap .categories-brands-swipers .selected_item .expand {
   background: #f4f4f4;
   width: 100%;
-  height: 24px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1753,8 +1756,8 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   visibility: hidden;
   grid-column: 1/2;
   grid-row: 1/2;
-  margin-top: 120px;
-  height: calc(100% - 120px);
+  margin-top: 130px;
+  height: calc(100% - 130px);
 }
 .try-on-main #try-on .model-wrap .categories-brands-swipers.brands-show .categories-slider {
   visibility: hidden;

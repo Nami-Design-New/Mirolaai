@@ -4,7 +4,7 @@ let categoriesSlider = new Swiper(".categories-slider", {
   spaceBetween: 0,
   direction: "vertical",
   grabCursor: true,
-  slidesPerView: 5
+  slidesPerView: 6
 });
 // brands slider
 let brandsSlider = new Swiper(".brands-slider", {
