@@ -156,3 +156,21 @@ close_wrap.addEventListener("click", () => {
   document.querySelector(".advertisments_wrap").style.display = "none";
   isblock = false;
 });
+// open categories
+let openCategories = document.querySelector(".open-categories");
+let categoriesBrandsSwipers = document.querySelector(
+  ".categories-brands-swipers"
+);
+openCategories.addEventListener("click", () => {
+  categoriesBrandsSwipers.classList.toggle("show");
+  openCategories.classList.toggle("move");
+  if (openCategories.classList.contains("move")) {
+    openCategories.querySelector(
+      "button"
+    ).innerHTML = `<i class="fa-sharp fa-light fa-bars-staggered"></i>`;
+  } else {
+    openCategories.querySelector(
+      "button"
+    ).innerHTML = `<i class="fa-sharp fa-light fa-bars"></i>`;
+  }
+});
