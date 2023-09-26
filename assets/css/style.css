@@ -1607,10 +1607,10 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
 .try-on-main #try-on .model-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center bottom;
+     object-position: center bottom;
 }
 .try-on-main #try-on .model-wrap iframe {
   width: 100%;
@@ -1667,9 +1667,6 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   width: 100px;
   height: calc(100% - 100px);
   display: grid;
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-          backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.7019607843);
   border-right: 0;
   grid-template-columns: 1fr;
 }
@@ -1703,7 +1700,7 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   margin: 0;
 }
 .try-on-main #try-on .model-wrap .categories-brands-swipers .selected_item .expand {
-  background: #f4f4f4;
+  background: #000;
   width: 100%;
   height: 30px;
   display: flex;
@@ -1711,9 +1708,9 @@ main .advertisments_wrap .mainSlider .mainSliderContainer .swiper-slide video {
   justify-content: center;
 }
 .try-on-main #try-on .model-wrap .categories-brands-swipers .selected_item .expand i {
-  color: #777;
+  color: #fff;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
 }
 .try-on-main #try-on .model-wrap .categories-brands-swipers .selected_item.show {
   display: flex;

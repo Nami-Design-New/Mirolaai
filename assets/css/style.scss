@@ -1585,8 +1585,8 @@ main {
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
+        object-fit: contain;
+        object-position: center bottom;
       }
       iframe {
         width: 100%;
@@ -1645,8 +1645,6 @@ main {
         width: 100px;
         height: calc(100% - 100px);
         display: grid;
-        backdrop-filter: blur(16px) saturate(180%);
-        background-color: #ffffffb3;
         border-right: 0;
         grid-template-columns: 1fr;
         .selected_item {
@@ -1678,16 +1676,16 @@ main {
             }
           }
           .expand {
-            background: #f4f4f4;
+            background: #000;
             width: 100%;
             height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             i {
-              color: #777;
+              color: #fff;
               cursor: pointer;
-              font-size: 18px;
+              font-size: 20px;
             }
           }
           &.show {
