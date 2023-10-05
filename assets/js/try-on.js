@@ -1,4 +1,3 @@
-/********try on swipers*********/
 // categories slider
 let categoriesSlider = new Swiper(".categories-slider", {
   spaceBetween: 0,
@@ -8,6 +7,13 @@ let categoriesSlider = new Swiper(".categories-slider", {
 });
 // brands slider
 let brandsSlider = new Swiper(".brands-slider", {
+  spaceBetween: 0,
+  direction: "vertical",
+  grabCursor: true,
+  slidesPerView: 6
+});
+// products slider
+let productsSlider = new Swiper(".products-slider", {
   spaceBetween: 0,
   direction: "vertical",
   grabCursor: true,
@@ -35,6 +41,7 @@ let colorsSlider = new Swiper(".colors-slider", {
 let categoriesSlides = document.querySelectorAll(
   ".categories-slider .swiper-slide"
 );
+let brandsSlides = document.querySelectorAll(".brands-slider .swiper-slide");
 let swipersWrapper = document.querySelector(".categories-brands-swipers");
 let selectedItem = document.querySelector(".selected_item");
 let expandBtn = document.querySelector(".expand");
@@ -49,6 +56,34 @@ categoriesSlides.forEach(slide => {
     if (clickedItem) {
       clickedItemImageSrc = clickedItem.querySelector(".icon img").src;
       clickedItemName = clickedItem.querySelector("h6").innerHTML;
+      selectedItem.querySelector(".icon").style.display = "block";
+      selectedItem.querySelector("h6").style.display = "block";
+    }
+    selectedItem.querySelector(".icon img").src = clickedItemImageSrc;
+    selectedItem.querySelector("h6").innerHTML = clickedItemName;
+  });
+});
+//from level 2 to level 3 function
+brandsSlides.forEach(slide => {
+  slide.addEventListener("click", e => {
+    swipersWrapper.classList.add("colors-show");
+    let clickedItem = e.target.closest(".swiper-slide");
+    let clickedItemImageSrc, clickedItemName;
+    if (clickedItem) {
+      // check if the target has image
+      if (clickedItem.querySelector(".icon")) {
+        clickedItemImageSrc = clickedItem.querySelector(".icon img").src;
+        selectedItem.querySelector(".icon").style.display = "block";
+      } else {
+        selectedItem.querySelector(".icon").style.display = "none";
+      }
+      // check if the target has h6
+      if (clickedItem.querySelector("h6")) {
+        clickedItemName = clickedItem.querySelector("h6").innerHTML;
+        selectedItem.querySelector("h6").style.display = "block";
+      } else {
+        selectedItem.querySelector("h6").style.display = "none";
+      }
     }
     selectedItem.querySelector(".icon img").src = clickedItemImageSrc;
     selectedItem.querySelector("h6").innerHTML = clickedItemName;
@@ -56,12 +91,19 @@ categoriesSlides.forEach(slide => {
 });
 // expanding button
 expandBtn.addEventListener("click", () => {
-  swipersWrapper.classList.remove("brands-show");
-  selectedItem.classList.remove("show");
+  if (
+    swipersWrapper.classList.contains("brands-show") &&
+    swipersWrapper.classList.contains("colors-show")
+  ) {
+    swipersWrapper.classList.remove("colors-show");
+  } else {
+    swipersWrapper.classList.remove("brands-show");
+    selectedItem.classList.remove("show");
+  }
 });
 // text trim
 $(document).ready(function() {
-  $(".brands-slider h6").each(function() {
+  $(".products-slider h6").each(function() {
     var text = $(this).text();
     if (text.length > 12) {
       var truncatedText =
